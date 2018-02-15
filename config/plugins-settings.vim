@@ -65,6 +65,9 @@
     endif
 " }}}
 
+" airline-theme {{{
+    let g:airline_theme='deus'
+" }}}
 
 " easymotion {{{
     let g:EasyMotion_do_mapping = 0 " Disable default mappings

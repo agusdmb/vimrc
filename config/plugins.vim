@@ -47,6 +47,7 @@ Plug 'tpope/vim-fugitive'
 
 " Visual
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasr/molokai'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'ryanoasis/vim-devicons'
