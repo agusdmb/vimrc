@@ -20,7 +20,6 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'w0rp/ale'
 Plug 'xolox/vim-misc' " needed for vim-session
 Plug 'xolox/vim-session'
-Plug 'xuhdev/vim-latex-live-preview'
 Plug 'yggdroot/indentline'
 Plug 'valloric/MatchTagAlways'
 Plug 'nelstrom/vim-visual-star-search'
@@ -55,6 +54,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Latex
+Plug 'xuhdev/vim-latex-live-preview'
 " Plug 'lervag/vimtex'
 
 " Markdown
