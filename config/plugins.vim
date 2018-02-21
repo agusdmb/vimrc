@@ -20,18 +20,20 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'w0rp/ale'
 Plug 'xolox/vim-misc' " needed for vim-session
 Plug 'xolox/vim-session'
-Plug 'yggdroot/indentline'
 Plug 'valloric/MatchTagAlways'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'wellle/targets.vim'
 Plug 'Chiel92/vim-autoformat'
+" Plug 'mhinz/vim-startify'
+Plug 'haya14busa/incsearch.vim'
 
 " Python
 Plug 'klen/python-mode'
-Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
-" Plug 'jmcantrell/vim-virtualenv'
 Plug 'davidhalter/jedi-vim'
+Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+" Plug 'jmcantrell/vim-virtualenv'
 
 " Javascript Typescript HTML CSS
 Plug 'leafgarland/typescript-vim'
@@ -53,6 +55,7 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'yggdroot/indentline'
 
 " Latex
 Plug 'xuhdev/vim-latex-live-preview'

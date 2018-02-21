@@ -171,3 +171,9 @@
     nnoremap <F3> :Autoformat<CR>
     vnoremap <F3> :Autoformat<CR>
 " }}}
+
+" incsearch {{{
+    map /  <Plug>(incsearch-forward)
+    map ?  <Plug>(incsearch-backward)
+    map g/ <Plug>(incsearch-stay)
+" }}}

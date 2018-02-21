@@ -20,8 +20,8 @@ vnoremap <Leader>y "+y
 nnoremap <C-a> ggVG
 nnoremap <Leader>a ggVG
 nnoremap <leader>Y ggVG"+y
-nnoremap / /\v
-vnoremap / /\v
+" nnoremap / /\v
+" vnoremap / /\v
 vmap > >gv
 vmap < <gv
 nnoremap 0 ^
