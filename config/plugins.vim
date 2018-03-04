@@ -1,6 +1,8 @@
 call plug#begin(expand('~/.config/nvim/plugged'))
 
+""""""""""""""""""""
 " General
+""""""""""""""""""""
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'christoomey/vim-tmux-navigator'
@@ -28,14 +30,18 @@ Plug 'Chiel92/vim-autoformat'
 " Plug 'mhinz/vim-startify'
 Plug 'haya14busa/incsearch.vim'
 
+""""""""""""""""""""
 " Python
+""""""""""""""""""""
 Plug 'klen/python-mode'
 Plug 'davidhalter/jedi-vim'
 Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 " Plug 'jmcantrell/vim-virtualenv'
 
+""""""""""""""""""""
 " Javascript Typescript HTML CSS
+""""""""""""""""""""
 Plug 'leafgarland/typescript-vim'
 Plug 'jason0x43/vim-js-indent'
 Plug 'mhartington/nvim-typescript'
@@ -43,11 +49,15 @@ Plug 'lilydjwg/colorizer'
 Plug 'mattn/emmet-vim'
 Plug 'quramy/tsuquyomi'
 
+""""""""""""""""""""
 " Git
+""""""""""""""""""""
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
+""""""""""""""""""""
 " Visual
+""""""""""""""""""""
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasr/molokai'
@@ -55,13 +65,20 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'machakann/vim-highlightedyank'
+Plug 'bronson/vim-trailing-whitespace'
+" Plug 'roman/golden-ratio'
 " Plug 'yggdroot/indentline'
 
+""""""""""""""""""""
 " Latex
+""""""""""""""""""""
 Plug 'xuhdev/vim-latex-live-preview'
 " Plug 'lervag/vimtex'
 
+""""""""""""""""""""
 " Markdown
+""""""""""""""""""""
 Plug 'suan/vim-instant-markdown' " npm -g install instant-markdown-d
 
 call plug#end()

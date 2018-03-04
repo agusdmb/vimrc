@@ -1,10 +1,10 @@
 let mapleader = ','
 
 " Regular settings
-nnoremap <Leader>w :up<CR>
+nnoremap <Leader>w :update<CR>
 nnoremap <Leader>q :quit<CR>
-nnoremap <Leader>x :x<CR>
-nnoremap <Leader>n :edit new<CR>
+nnoremap <Leader>x :exit<CR>
+nnoremap <Leader>n :enew<CR>
 nnoremap <Leader>c :bdelete<CR>
 
 " Personal preferences
@@ -64,3 +64,6 @@ vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 nnoremap <F5> :source ~/.config/nvim/init.vim<CR>
+
+" Windows
+nnoremap <F8> :vertical resize 80<CR>

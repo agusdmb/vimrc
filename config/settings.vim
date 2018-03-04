@@ -20,7 +20,7 @@ set incsearch
 set hlsearch
 set ignorecase
 set hidden
-set completeopt=menuone,noinsert,noselect
+set completeopt=menuone,noinsert,noselect,preview
 if !isdirectory("~/.config/nvim/undo/")
     silent !mkdir ~/.config/nvim/undo > /dev/null 2>&1
 endif
@@ -31,3 +31,8 @@ set foldlevel=2
 set splitright
 set splitbelow
 set guifont=DroidSansMono\ Nerd\ Font
+
+set inccommand=split
+
+" Show arrow if line continues rightwards
+set listchars=extends:→
