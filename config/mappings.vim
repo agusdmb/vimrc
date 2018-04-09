@@ -28,6 +28,8 @@ nnoremap 0 ^
 vnoremap 0 ^
 nnoremap ^ 0
 vnoremap ^ 0
+nnoremap ` '
+nnoremap ' `
 
 " Navigation
 nnoremap <C-h> <C-w><C-h>
