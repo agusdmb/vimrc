@@ -81,4 +81,9 @@ Plug 'xuhdev/vim-latex-live-preview'
 """"""""""""""""""""
 Plug 'suan/vim-instant-markdown' " npm -g install instant-markdown-d
 
+""""""""""""""""""""
+" UML
+""""""""""""""""""""
+Plug 'aklt/plantuml-syntax'
+
 call plug#end()

@@ -60,12 +60,18 @@ tnoremap <C-h> <C-\><C-n><C-W>h
 tnoremap <C-l> <C-\><C-n><C-W>l
 
 " To move lines with Alt + {jk} like Sublime
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+nmap <M-j> mz:m+<CR>`z
+nmap <M-k> mz:m-2<CR>`z
+vmap <M-j> :m'>+<CR>`<my`>mzgv`yo`z
+vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
 
 nnoremap <F5> :source ~/.config/nvim/init.vim<CR>
 
 " Windows
 nnoremap <F8> :vertical resize 80<CR>
+
+" Resizing
+nnoremap <C-left> :vertical resize -1<CR>
+nnoremap <C-right> :vertical resize +1<CR>
+nnoremap <C-up> :resize +1<CR>
+nnoremap <C-down> :resize -1<CR>
