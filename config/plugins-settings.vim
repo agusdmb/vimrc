@@ -177,3 +177,11 @@
     map ?  <Plug>(incsearch-backward)
     map g/ <Plug>(incsearch-stay)
 " }}}
+
+
+" vim-signature"{{{
+    "Support for gitgutter. When this =1 :
+    "The mark is displayed over the gitgutter sign, but inherits the same colour so
+    "you can tell what was there
+    let g:SignatureMarkTextHLDynamic = 1
+"}}}

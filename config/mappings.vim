@@ -5,7 +5,7 @@ nnoremap <Leader>w :update<CR>
 nnoremap <Leader>q :quit<CR>
 nnoremap <Leader>x :exit<CR>
 nnoremap <Leader>n :enew<CR>
-nnoremap <Leader>c :bdelete<CR>
+nnoremap <Leader>c :Bdelete<CR>
 
 " Personal preferences
 nnoremap <S-q> <Nop>
@@ -13,6 +13,7 @@ nnoremap ; :
 vnoremap ; :
 inoremap kj <Esc>
 vnoremap kj <Esc>
+cnoremap kj <Esc>
 nnoremap <Space> :nohlsearch<CR>
 nnoremap <CR> o<Esc>
 nnoremap <Leader>p "+p

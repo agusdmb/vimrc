@@ -29,6 +29,7 @@ Plug 'wellle/targets.vim'
 Plug 'Chiel92/vim-autoformat'
 " Plug 'mhinz/vim-startify'
 Plug 'haya14busa/incsearch.vim'
+Plug 'moll/vim-bbye'
 
 """"""""""""""""""""
 " Python
@@ -67,6 +68,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'machakann/vim-highlightedyank'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'kshenoy/vim-signature'
 " Plug 'roman/golden-ratio'
 " Plug 'yggdroot/indentline'
 
