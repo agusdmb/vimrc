@@ -76,7 +76,7 @@ Plug 'kshenoy/vim-signature'
 " Latex
 """"""""""""""""""""
 Plug 'xuhdev/vim-latex-live-preview'
-" Plug 'lervag/vimtex'
+Plug 'lervag/vimtex'
 
 """"""""""""""""""""
 " Markdown

@@ -12,7 +12,7 @@ nnoremap <S-q> <Nop>
 nnoremap ; :
 vnoremap ; :
 inoremap kj <Esc>
-vnoremap kj <Esc>
+" vnoremap kj <Esc>
 cnoremap kj <Esc>
 nnoremap <Space> :nohlsearch<CR>
 nnoremap <CR> o<Esc>

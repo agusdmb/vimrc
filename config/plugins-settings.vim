@@ -87,7 +87,7 @@
 
 " ale {{{
     let g:ale_linters = {
-    \   'python': ['flake8'],
+    \   'python': ['flake8', 'pylint'],
     \}
 
     let g:ale_lint_delay = 1000
@@ -101,7 +101,7 @@
 " nerdtree {{{
     nnoremap <Leader>e :NERDTreeToggle<CR>
     nnoremap <Leader>f :NERDTreeFocus<CR>
-    let NERDTreeIgnore = ['\.pyc$']
+    let NERDTreeIgnore = ['\.pyc$', '\.ipynb$']
 " }}}
 
 

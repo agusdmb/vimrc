@@ -19,6 +19,7 @@ set smartindent
 set incsearch
 set hlsearch
 set ignorecase
+set smartcase
 set hidden
 set completeopt=menuone,noinsert,noselect,preview
 if !isdirectory("~/.config/nvim/undo/")
