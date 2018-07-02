@@ -12,6 +12,8 @@
     let g:pymode_rope = 0
     " let g:pymode_virtualenv_path = expand('~/.virtualenvs')
     let g:pymode_lint_on_write = 0
+    let g:pymode_options_max_line_length = 90
+    let g:pymode_options_colorcolumn = 1
 " }}}
 
 
@@ -87,7 +89,7 @@
 
 " ale {{{
     let g:ale_linters = {
-    \   'python': ['flake8', 'pylint'],
+    \   'python': ['pylint'],
     \}
 
     let g:ale_lint_delay = 1000
@@ -95,6 +97,8 @@
     " set statusline+=%{ALEGetStatusLine()}
 
     let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+
+    let g:ale_python_pylint_change_directory = 0
 " }}}
 
 
