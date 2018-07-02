@@ -40,15 +40,15 @@ Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 " Plug 'jmcantrell/vim-virtualenv'
 
-""""""""""""""""""""
-" Javascript Typescript HTML CSS
-""""""""""""""""""""
-Plug 'leafgarland/typescript-vim'
-Plug 'jason0x43/vim-js-indent'
-Plug 'mhartington/nvim-typescript'
-Plug 'lilydjwg/colorizer'
-Plug 'mattn/emmet-vim'
-Plug 'quramy/tsuquyomi'
+"""""""""""""""""""""
+"" Javascript Typescript HTML CSS
+"""""""""""""""""""""
+"Plug 'leafgarland/typescript-vim'
+"Plug 'jason0x43/vim-js-indent'
+"Plug 'mhartington/nvim-typescript'
+"Plug 'lilydjwg/colorizer'
+"Plug 'mattn/emmet-vim'
+"Plug 'quramy/tsuquyomi'
 
 """"""""""""""""""""
 " Git
@@ -75,8 +75,8 @@ Plug 'kshenoy/vim-signature'
 """"""""""""""""""""
 " Latex
 """"""""""""""""""""
-Plug 'xuhdev/vim-latex-live-preview'
-Plug 'lervag/vimtex'
+" Plug 'xuhdev/vim-latex-live-preview'
+" Plug 'lervag/vimtex'
 
 """"""""""""""""""""
 " Markdown
@@ -86,6 +86,6 @@ Plug 'suan/vim-instant-markdown' " npm -g install instant-markdown-d
 """"""""""""""""""""
 " UML
 """"""""""""""""""""
-Plug 'aklt/plantuml-syntax'
+" Plug 'aklt/plantuml-syntax'
 
 call plug#end()
