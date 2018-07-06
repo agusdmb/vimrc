@@ -189,3 +189,8 @@
     "you can tell what was there
     let g:SignatureMarkTextHLDynamic = 1
 "}}}
+
+" Semshi {{{
+    let g:semshi#active = v:false
+    nnoremap <Leader>s :Semshi toggle<CR>
+" }}}
