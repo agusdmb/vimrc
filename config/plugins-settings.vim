@@ -89,7 +89,7 @@
 
 " ale {{{
     let g:ale_linters = {
-    \   'python': ['pylint'],
+    \   'python': ['pylint', 'flake8'],
     \}
 
     let g:ale_lint_delay = 1000
@@ -105,7 +105,7 @@
 " nerdtree {{{
     nnoremap <Leader>e :NERDTreeToggle<CR>
     nnoremap <Leader>f :NERDTreeFocus<CR>
-    let NERDTreeIgnore = ['\.pyc$', '\.ipynb$']
+    let NERDTreeIgnore = ['\.pyc$']
 " }}}
 
 
@@ -191,6 +191,6 @@
 "}}}
 
 " Semshi {{{
-    let g:semshi#active = v:false
-    nnoremap <Leader>s :Semshi toggle<CR>
+    " let g:semshi#active = v:false
+    " nnoremap <Leader>s :Semshi toggle<CR>
 " }}}

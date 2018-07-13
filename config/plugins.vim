@@ -39,7 +39,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 " Plug 'jmcantrell/vim-virtualenv'
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 """""""""""""""""""""
 "" Javascript Typescript HTML CSS
