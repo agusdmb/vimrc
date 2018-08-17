@@ -27,7 +27,7 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'wellle/targets.vim'
 Plug 'Chiel92/vim-autoformat'
-" Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 Plug 'haya14busa/incsearch.vim'
 Plug 'moll/vim-bbye'
 
@@ -74,7 +74,6 @@ Plug 'kshenoy/vim-signature'
 " Plug 'roman/golden-ratio'
 Plug 'yggdroot/indentline'
 Plug 'altercation/vim-colors-solarized'
-Plug 'mhinz/vim-startify'
 
 """"""""""""""""""""
 " Latex

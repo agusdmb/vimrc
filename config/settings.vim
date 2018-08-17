@@ -40,3 +40,7 @@ set listchars=extends:→
 
 set termguicolors
 set background=dark
+
+set mouse=a
+
+set diffopt+=vertical
