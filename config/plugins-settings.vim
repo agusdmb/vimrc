@@ -14,6 +14,8 @@
     let g:pymode_lint_on_write = 0
     let g:pymode_options_max_line_length = 90
     let g:pymode_options_colorcolumn = 1
+    let g:pymode_python = 'python3'
+    " nnoremap <Leader>r :PymodeRun<CR>
 " }}}
 
 
@@ -143,7 +145,7 @@
 
     inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
-    let g:python_host_prog = '/usr/bin/python'
+    let g:python_host_prog = '/usr/bin/python2.7'
     let g:python3_host_prog = '/usr/bin/python3'
 " }}}
 
@@ -151,6 +153,7 @@
 " molokai {{{
     if !exists('g:not_finish_vimplug')
       colorscheme molokai
+      " colorscheme solarized
     endif
 " }}}
 

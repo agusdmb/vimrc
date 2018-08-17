@@ -37,3 +37,6 @@ set inccommand=split
 
 " Show arrow if line continues rightwards
 set listchars=extends:→
+
+set termguicolors
+set background=dark

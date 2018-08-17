@@ -9,7 +9,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
+" Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-user'
 Plug 'raimondi/delimitmate'
@@ -20,9 +20,9 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/matchit.zip'
 Plug 'w0rp/ale'
-Plug 'xolox/vim-misc' " needed for vim-session
-Plug 'xolox/vim-session'
-Plug 'valloric/MatchTagAlways'
+" Plug 'xolox/vim-misc' " needed for vim-session
+" Plug 'xolox/vim-session'
+" Plug 'valloric/MatchTagAlways'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'wellle/targets.vim'
@@ -40,6 +40,7 @@ Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 " Plug 'jmcantrell/vim-virtualenv'
 " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+" Plug 'tmhedberg/simpylfold'
 
 """""""""""""""""""""
 "" Javascript Typescript HTML CSS
@@ -72,6 +73,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'kshenoy/vim-signature'
 " Plug 'roman/golden-ratio'
 " Plug 'yggdroot/indentline'
+Plug 'altercation/vim-colors-solarized'
 
 """"""""""""""""""""
 " Latex
