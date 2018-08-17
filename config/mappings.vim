@@ -60,11 +60,14 @@ tnoremap <C-k> <C-\><C-n><C-W>k
 tnoremap <C-h> <C-\><C-n><C-W>h
 tnoremap <C-l> <C-\><C-n><C-W>l
 
-" To move lines with Alt + {jk} like Sublime
-nmap <M-j> mz:m+<CR>`z
-nmap <M-k> mz:m-2<CR>`z
-vmap <M-j> :m'>+<CR>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
+" " To move lines with Alt + {jk} like Sublime
+" nmap <M-j> mz:m+<CR>`z
+" nmap <M-k> mz:m-2<CR>`z
+" vmap <M-j> :m'>+<CR>`<my`>mzgv`yo`z
+" vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
+
+nnoremap <M-j> :cn<CR>
+nnoremap <M-k> :cp<CR>
 
 nnoremap <F5> :source ~/.config/nvim/init.vim<CR>
 

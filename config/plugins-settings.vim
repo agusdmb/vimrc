@@ -91,7 +91,7 @@
 
 " ale {{{
     let g:ale_linters = {
-    \   'python': ['pylint', 'flake8'],
+    \   'python': ['pylint'],
     \}
 
     let g:ale_lint_delay = 1000
