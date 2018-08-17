@@ -72,8 +72,9 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'kshenoy/vim-signature'
 " Plug 'roman/golden-ratio'
-" Plug 'yggdroot/indentline'
+Plug 'yggdroot/indentline'
 Plug 'altercation/vim-colors-solarized'
+Plug 'mhinz/vim-startify'
 
 """"""""""""""""""""
 " Latex
