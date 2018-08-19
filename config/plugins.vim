@@ -30,6 +30,9 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'mhinz/vim-startify'
 Plug 'haya14busa/incsearch.vim'
 Plug 'moll/vim-bbye'
+Plug 'junegunn/vim-peekaboo'
+Plug 'junegunn/vim-slash'
+Plug 'junegunn/goyo.vim'
 
 """"""""""""""""""""
 " Python
@@ -74,6 +77,7 @@ Plug 'kshenoy/vim-signature'
 " Plug 'roman/golden-ratio'
 Plug 'yggdroot/indentline'
 Plug 'altercation/vim-colors-solarized'
+Plug 'junegunn/limelight.vim'
 
 """"""""""""""""""""
 " Latex

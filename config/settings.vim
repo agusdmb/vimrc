@@ -29,8 +29,8 @@ set undofile
 set undodir=$HOME/.config/nvim/undo
 set noswapfile
 set foldlevel=2
-" set splitright
-" set splitbelow
+set splitright
+set splitbelow
 " set guifont=DroidSansMono\ Nerd\ Font
 
 set inccommand=split
