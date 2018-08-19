@@ -197,3 +197,7 @@
     " let g:semshi#active = v:false
     " nnoremap <Leader>s :Semshi toggle<CR>
 " }}}
+
+" Goyo & Limelight {{{
+    nnoremap <Leader>l :Goyo <Bar> Limelight!!<CR>
+" }}}
