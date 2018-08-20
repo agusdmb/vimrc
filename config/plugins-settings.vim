@@ -1,8 +1,8 @@
-" Emmet {{{
-    imap <leader>y <C-y>,
-    let g:user_emmet_install_global = 0
-    autocmd FileType html,css EmmetInstall
-" }}}
+" " Emmet {{{
+"     imap <leader>y <C-y>,
+"     let g:user_emmet_install_global = 0
+"     autocmd FileType html,css EmmetInstall
+" " }}}
 
 
 " Python  {{{
@@ -32,11 +32,9 @@
     set laststatus=2
     " To show the buffers open on the top status bar
     let g:airline#extensions#tabline#enabled = 1
-
     if !exists('g:airline_symbols')
       let g:airline_symbols = {}
     endif
-
     if !exists('g:airline_powerline_fonts')
       let g:airline#extensions#tabline#left_sep = ' '
       let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -57,7 +55,6 @@
     else
       let g:airline#extensions#tabline#left_sep = ''
       let g:airline#extensions#tabline#left_alt_sep = ''
-
       " powerline symbols
       let g:airline_left_sep = ''
       let g:airline_left_alt_sep = ''
@@ -75,7 +72,6 @@
 
 " easymotion {{{
     let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
     " Jump to anywhere you want with minimal keystrokes, with just one key binding.
     " `s{char}{label}`
     " nmap s <Plug>(easymotion-overwin-f)
@@ -83,7 +79,6 @@
     " `s{char}{char}{label}`
     " Need one more keystroke, but on average, it may be more comfortable.
     nmap s <Plug>(easymotion-overwin-f2)
-
     " Turn on case insensitive feature
     let g:EasyMotion_smartcase = 1
 " }}}
@@ -93,13 +88,9 @@
     let g:ale_linters = {
     \   'python': ['pylint'],
     \}
-
     let g:ale_lint_delay = 1000
-
     " set statusline+=%{ALEGetStatusLine()}
-
     let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-
     let g:ale_python_pylint_change_directory = 0
 " }}}
 
@@ -114,23 +105,21 @@
 " EasyAlign {{{
     " Start interactive EasyAlign in visual mode (e.g. vipga)
     xmap ga <Plug>(EasyAlign)
-
     " Start interactive EasyAlign for a motion/text object (e.g. gaip)
     nmap ga <Plug>(EasyAlign)
 " }}}
 
 
-" session management {{{
-    nnoremap <leader>so :OpenSession<Space>
-    nnoremap <leader>ss :SaveSession<Space>
-    nnoremap <leader>sd :DeleteSession<CR>
-    nnoremap <leader>sc :CloseSession<CR>
-
-    let g:session_directory = "~/.config/nvim/sessions"
-    let g:session_autoload = "no"
-    let g:session_autosave = "no"
-    let g:session_command_aliases = 1
-" }}}
+" " session management {{{
+"     nnoremap <leader>so :OpenSession<Space>
+"     nnoremap <leader>ss :SaveSession<Space>
+"     nnoremap <leader>sd :DeleteSession<CR>
+"     nnoremap <leader>sc :CloseSession<CR>
+"     let g:session_directory = "~/.config/nvim/sessions"
+"     let g:session_autoload = "no"
+"     let g:session_autosave = "no"
+"     let g:session_command_aliases = 1
+" " }}}
 
 
 " FZF {{{
@@ -142,9 +131,7 @@
 " deoplete {{{
     " Use deoplete.
     let g:deoplete#enable_at_startup = 1
-
     inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-
     let g:python_host_prog = '/usr/bin/python2.7'
     let g:python3_host_prog = '/usr/bin/python3'
 " }}}

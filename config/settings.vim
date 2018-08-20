@@ -44,3 +44,5 @@ set background=dark
 set mouse=a
 
 set diffopt+=vertical
+
+set updatetime=100
