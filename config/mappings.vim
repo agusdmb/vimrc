@@ -19,7 +19,6 @@ nnoremap <CR> o<Esc>
 nnoremap <Leader>p "+p
 vnoremap <Leader>y "+y
 nnoremap <C-a> ggVG
-nnoremap <Leader>a ggVG
 nnoremap <leader>Y ggVG"+y
 " nnoremap / /\v
 " vnoremap / /\v
