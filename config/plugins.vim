@@ -9,9 +9,9 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 " Plug 'junegunn/vim-easy-align'
 " Plug 'valloric/MatchTagAlways'
 " Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
-Plug 'Chiel92/vim-autoformat'
+" Plug 'Chiel92/vim-autoformat'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
@@ -37,11 +37,11 @@ Plug 'wellle/targets.vim'
 
 " Plug 'jmcantrell/vim-virtualenv'
 " Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-" Plug 'tmhedberg/simpylfold'
+Plug 'tmhedberg/simpylfold'
+" Plug 'klen/python-mode', {'branch': 'develop'}
 Plug 'davidhalter/jedi-vim'
-Plug 'klen/python-mode'
-Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 """"""""""""""""""""
 " Javascript Typescript HTML CSS

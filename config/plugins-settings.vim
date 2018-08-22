@@ -9,12 +9,12 @@
     " shortcut para yapf
     " nnoremap <leader>y :0,$!yapf<CR>
     " This one down here isnt working (?)
-    let g:pymode_rope = 0
+    " let g:pymode_rope = 0
     " let g:pymode_virtualenv_path = expand('~/.virtualenvs')
-    let g:pymode_lint_on_write = 0
-    let g:pymode_options_max_line_length = 90
-    let g:pymode_options_colorcolumn = 1
-    let g:pymode_python = 'python3'
+    " let g:pymode_lint_on_write = 0
+    " let g:pymode_options_max_line_length = 90
+    " let g:pymode_options_colorcolumn = 1
+    " let g:pymode_python = 'python3'
     " nnoremap <Leader>r :PymodeRun<CR>
 " }}}
 
@@ -86,7 +86,7 @@
 
 " ale {{{
     let g:ale_linters = {
-    \   'python': ['pylint'],
+    \   'python': ['pylint', 'flake8'],
     \}
     let g:ale_lint_delay = 1000
     " set statusline+=%{ALEGetStatusLine()}
@@ -168,9 +168,9 @@
 " }}}
 
 " incsearch {{{
-    map /  <Plug>(incsearch-forward)
+    map g/  <Plug>(incsearch-forward)
     map ?  <Plug>(incsearch-backward)
-    map g/ <Plug>(incsearch-stay)
+    map / <Plug>(incsearch-stay)
 " }}}
 
 
