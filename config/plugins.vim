@@ -31,6 +31,8 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 
+Plug 'Shougo/echodoc.vim'
+
 """"""""""""""""""""
 " Python
 """"""""""""""""""""
@@ -80,6 +82,7 @@ Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'yggdroot/indentline'
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'majutsushi/tagbar'
 
 """"""""""""""""""""
 " Latex

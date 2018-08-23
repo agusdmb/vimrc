@@ -159,7 +159,7 @@
 
 
 " indentline {{{
-    let g:indentLine_setConceal = 0
+    " let g:indentLine_setConceal = 0
 " }}}
 
 " autoformat {{{
@@ -188,4 +188,8 @@
 
 " Goyo & Limelight {{{
     nnoremap <Leader>l :Goyo <Bar> Limelight!!<CR>
+" }}}
+
+" Echodoc {{{
+    let g:echodoc#enable_at_startup = 1
 " }}}
