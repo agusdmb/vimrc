@@ -10,8 +10,8 @@ set scrolloff=7
 set sidescrolloff=5
 set colorcolumn=80
 set wildmenu
-" set concealcursor=nc
-" set conceallevel=0
+set concealcursor=nc
+set conceallevel=0
 set tabstop=4
 set shiftwidth=4
 set expandtab

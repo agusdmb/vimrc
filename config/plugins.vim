@@ -82,6 +82,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'yggdroot/indentline'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'majutsushi/tagbar'
+Plug 'docker/docker'
 
 """"""""""""""""""""
 " Latex
@@ -94,7 +95,7 @@ Plug 'majutsushi/tagbar'
 " Markdown
 """"""""""""""""""""
 
-Plug 'suan/vim-instant-markdown' " npm -g install instant-markdown-d
+" Plug 'suan/vim-instant-markdown' " npm -g install instant-markdown-d
 
 """"""""""""""""""""
 " UML

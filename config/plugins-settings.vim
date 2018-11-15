@@ -133,8 +133,10 @@
     " Use deoplete.
     let g:deoplete#enable_at_startup = 1
     inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-    let g:python_host_prog = '/usr/bin/python2.7'
-    let g:python3_host_prog = '/usr/bin/python3'
+    " let g:python_host_prog = '/usr/bin/python2.7'
+    " let g:python3_host_prog = '/usr/bin/python3'
+    let g:python_host_prog = '/usr/local/bin/python'
+    let g:python3_host_prog = '/usr/local/bin/python3'
 " }}}
 
 
@@ -159,7 +161,7 @@
 
 
 " indentline {{{
-    " let g:indentLine_setConceal = 0
+    let g:indentLine_setConceal = 0
 " }}}
 
 " autoformat {{{
