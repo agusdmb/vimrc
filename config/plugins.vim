@@ -11,11 +11,11 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 " Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
 " Plug 'Chiel92/vim-autoformat'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
-" Plug 'junegunn/vim-slash'
+Plug 'junegunn/vim-slash'
 Plug 'kana/vim-textobj-indent' | Plug 'kana/vim-textobj-user'
 Plug 'mhinz/vim-startify'
 Plug 'moll/vim-bbye'
@@ -31,6 +31,7 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'Shougo/echodoc.vim'
+Plug 'vim-scripts/BufOnly.vim'
 
 """"""""""""""""""""
 " Python

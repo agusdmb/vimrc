@@ -5,18 +5,18 @@
 " " }}}
 
 
-" Python  {{{
-    " shortcut para yapf
-    " nnoremap <leader>y :0,$!yapf<CR>
-    " This one down here isnt working (?)
-    " let g:pymode_rope = 0
-    " let g:pymode_virtualenv_path = expand('~/.virtualenvs')
-    " let g:pymode_lint_on_write = 0
-    " let g:pymode_options_max_line_length = 90
-    " let g:pymode_options_colorcolumn = 1
-    " let g:pymode_python = 'python3'
-    " nnoremap <Leader>r :PymodeRun<CR>
-" }}}
+" " Python  {{{
+"     shortcut para yapf
+"     nnoremap <leader>y :0,$!yapf<CR>
+"     This one down here isnt working (?)
+"     let g:pymode_rope = 0
+"     let g:pymode_virtualenv_path = expand('~/.virtualenvs')
+"     let g:pymode_lint_on_write = 0
+"     let g:pymode_options_max_line_length = 90
+"     let g:pymode_options_colorcolumn = 1
+"     let g:pymode_python = 'python3'
+"     nnoremap <Leader>r :PymodeRun<CR>
+" " }}}
 
 
 " delimitmate {{{

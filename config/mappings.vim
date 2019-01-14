@@ -18,7 +18,7 @@ nnoremap <Space> :nohlsearch<CR>
 nnoremap <CR> o<Esc>
 nnoremap <Leader>p "+p
 vnoremap <Leader>y "+y
-nnoremap <C-a> ggVG
+" nnoremap <C-a> ggVG
 nnoremap <leader>Y ggVG"+y
 " nnoremap / /\v
 " vnoremap / /\v
@@ -61,12 +61,16 @@ tnoremap <C-l> <C-\><C-n><C-W>l
 
 " " To move lines with Alt + {jk} like Sublime
 " nmap <M-j> mz:m+<CR>`z
+" nmap ∆ :m+<CR>
 " nmap <M-k> mz:m-2<CR>`z
+" nmap ˚ :m-2<CR>
 " vmap <M-j> :m'>+<CR>`<my`>mzgv`yo`z
 " vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
 
-nnoremap <M-j> :cn<CR>
-nnoremap <M-k> :cp<CR>
+" nnoremap <M-j> :cn<CR>
+nnoremap ∆ :cn<CR>
+" nnoremap <M-k> :cp<CR>
+nnoremap ˚ :cp<CR>
 
 nnoremap <F5> :source ~/.config/nvim/init.vim<CR>
 

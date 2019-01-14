@@ -4,11 +4,11 @@ set number
 set cursorline
 set lazyredraw
 set nowrap
-set wrapmargin=79
-set textwidth=79
+set wrapmargin=89
+set textwidth=89
 set scrolloff=7
 set sidescrolloff=5
-set colorcolumn=80
+set colorcolumn=90
 set wildmenu
 set concealcursor=nc
 set conceallevel=0
