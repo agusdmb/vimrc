@@ -5,11 +5,9 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 """"""""""""""""""""
 
 " Plug 'AndrewRadev/splitjoin.vim'
-" Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " Plug 'junegunn/vim-easy-align'
-" Plug 'valloric/MatchTagAlways'
 " Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
-" Plug 'Chiel92/vim-autoformat'
+Plug 'Chiel92/vim-autoformat'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
@@ -37,24 +35,10 @@ Plug 'vim-scripts/BufOnly.vim'
 " Python
 """"""""""""""""""""
 
-" Plug 'jmcantrell/vim-virtualenv'
-" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'tmhedberg/simpylfold'
-" Plug 'klen/python-mode', {'branch': 'develop'}
 Plug 'davidhalter/jedi-vim'
 Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-
-""""""""""""""""""""
-" Javascript Typescript HTML CSS
-""""""""""""""""""""
-
-"Plug 'jason0x43/vim-js-indent'
-"Plug 'leafgarland/typescript-vim'
-"Plug 'lilydjwg/colorizer'
-"Plug 'mattn/emmet-vim'
-"Plug 'mhartington/nvim-typescript'
-"Plug 'quramy/tsuquyomi'
 
 """"""""""""""""""""
 " Git
@@ -67,8 +51,6 @@ Plug 'tpope/vim-fugitive'
 " Visual
 """"""""""""""""""""
 
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'roman/golden-ratio'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
@@ -86,22 +68,9 @@ Plug 'majutsushi/tagbar'
 Plug 'docker/docker'
 
 """"""""""""""""""""
-" Latex
-""""""""""""""""""""
-
-" Plug 'lervag/vimtex'
-" Plug 'xuhdev/vim-latex-live-preview'
-
-""""""""""""""""""""
 " Markdown
 """"""""""""""""""""
 
 " Plug 'suan/vim-instant-markdown' " npm -g install instant-markdown-d
-
-""""""""""""""""""""
-" UML
-""""""""""""""""""""
-
-" Plug 'aklt/plantuml-syntax'
 
 call plug#end()

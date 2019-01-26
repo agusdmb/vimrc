@@ -45,12 +45,6 @@ nnoremap <Leader>h :split<CR>
 cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 
-" The ones below are now done by the plugin 'targets'
-" onoremap i, :<C-u>normal! T,vt,<CR>
-" vnoremap i, :<C-u>normal! T,vt,<CR>
-" onoremap a, :<C-u>normal! F,vt,<CR>
-" vnoremap a, :<C-u>normal! F,vt,<CR>
-
 " Terminal mappings
 tnoremap <Esc> <C-\><C-n>
 nnoremap <Leader>t :terminal<CR>
@@ -58,14 +52,6 @@ tnoremap <C-j> <C-\><C-n><C-W>j
 tnoremap <C-k> <C-\><C-n><C-W>k
 tnoremap <C-h> <C-\><C-n><C-W>h
 tnoremap <C-l> <C-\><C-n><C-W>l
-
-" " To move lines with Alt + {jk} like Sublime
-" nmap <M-j> mz:m+<CR>`z
-" nmap ∆ :m+<CR>
-" nmap <M-k> mz:m-2<CR>`z
-" nmap ˚ :m-2<CR>
-" vmap <M-j> :m'>+<CR>`<my`>mzgv`yo`z
-" vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
 
 " nnoremap <M-j> :cn<CR>
 nnoremap ∆ :cn<CR>

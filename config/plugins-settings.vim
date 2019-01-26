@@ -1,33 +1,3 @@
-" " Emmet {{{
-"     imap <leader>y <C-y>,
-"     let g:user_emmet_install_global = 0
-"     autocmd FileType html,css EmmetInstall
-" " }}}
-
-
-" " Python  {{{
-"     shortcut para yapf
-"     nnoremap <leader>y :0,$!yapf<CR>
-"     This one down here isnt working (?)
-"     let g:pymode_rope = 0
-"     let g:pymode_virtualenv_path = expand('~/.virtualenvs')
-"     let g:pymode_lint_on_write = 0
-"     let g:pymode_options_max_line_length = 90
-"     let g:pymode_options_colorcolumn = 1
-"     let g:pymode_python = 'python3'
-"     nnoremap <Leader>r :PymodeRun<CR>
-" " }}}
-
-
-" delimitmate {{{
-    " Para que al apretar enter entre (|) o [|] o {|} baje el segundo y quede el
-    " cursor al medio
-    let delimitMate_expand_cr = 1
-    " Parecido pero para que cuando se apreta space en (|) quede ( | )
-    let delimitMate_expand_space = 1
-" }}}
-
-
 " airline {{{
     set laststatus=2
     " To show the buffers open on the top status bar
@@ -133,10 +103,9 @@
     " Use deoplete.
     let g:deoplete#enable_at_startup = 1
     inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-    " let g:python_host_prog = '/usr/bin/python2.7'
-    " let g:python3_host_prog = '/usr/bin/python3'
-    let g:python_host_prog = '/usr/local/bin/python'
-    let g:python3_host_prog = '/usr/local/bin/python3'
+    let g:deoplete#sources#jedi#show_docstring = 1
+    let g:deoplete#enable_ignore_case = 1
+    let g:deoplete#enable_smart_case = 1
 " }}}
 
 
@@ -182,11 +151,6 @@
     "you can tell what was there
     let g:SignatureMarkTextHLDynamic = 1
 "}}}
-
-" Semshi {{{
-    " let g:semshi#active = v:false
-    " nnoremap <Leader>s :Semshi toggle<CR>
-" }}}
 
 " Goyo & Limelight {{{
     nnoremap <Leader>l :Goyo <Bar> Limelight!!<CR>

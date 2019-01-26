@@ -5,9 +5,9 @@ autocmd BufNewFile,BufRead *.{ts,js,html} set tabstop=2
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
-" if has("autocmd")
-"     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-" endif
+if has("autocmd")
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 " This line is so after every save in those typefiles, whitespaces at the end
 " are trim
