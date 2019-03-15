@@ -68,3 +68,5 @@ nnoremap <C-left> :vertical resize -1<CR>
 nnoremap <C-right> :vertical resize +1<CR>
 nnoremap <C-up> :resize +1<CR>
 nnoremap <C-down> :resize -1<CR>
+
+nnoremap <Leader>z :windo set cursorbind! \| windo set scrollbind!<CR>

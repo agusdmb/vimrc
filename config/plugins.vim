@@ -10,7 +10,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 Plug 'Chiel92/vim-autoformat'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-slash'
@@ -30,15 +30,17 @@ Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'Shougo/echodoc.vim'
 Plug 'vim-scripts/BufOnly.vim'
+" Plug 'tpope/vim-vinegar'
 
 """"""""""""""""""""
 " Python
 """"""""""""""""""""
 
-Plug 'tmhedberg/simpylfold'
-Plug 'davidhalter/jedi-vim'
+" Plug 'tmhedberg/simpylfold'
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+Plug 'klen/python-mode', { 'for': 'python' }
 
 """"""""""""""""""""
 " Git
@@ -46,6 +48,7 @@ Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 
 """"""""""""""""""""
 " Visual
@@ -65,7 +68,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'yggdroot/indentline'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'majutsushi/tagbar'
-Plug 'docker/docker'
+" Plug 'docker/docker'
 
 """"""""""""""""""""
 " Markdown

@@ -8,7 +8,7 @@ set wrapmargin=79
 set textwidth=79
 set scrolloff=7
 set sidescrolloff=5
-set colorcolumn=80
+" set colorcolumn=80
 set wildmenu
 set concealcursor=nc
 set conceallevel=0
@@ -28,7 +28,7 @@ endif
 set undofile
 set undodir=$HOME/.config/nvim/undo
 set noswapfile
-set foldlevel=2
+set foldlevel=3
 set splitright
 set splitbelow
 
@@ -40,7 +40,7 @@ set listchars=extends:→
 set termguicolors
 set background=dark
 
-" set mouse=a
+set mouse=a
 
 set diffopt+=vertical
 
