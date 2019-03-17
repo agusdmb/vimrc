@@ -107,7 +107,6 @@
 " deoplete {{{
     " Use deoplete.
     let g:deoplete#enable_at_startup = 1
-    " inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
     inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
     inoremap <expr><S-tab> pumvisible() ? "\<c-p>" : "\<S-tab>"
     let g:deoplete#sources#jedi#show_docstring = 1
@@ -119,7 +118,6 @@
 " molokai {{{
     if !exists('g:not_finish_vimplug')
       colorscheme molokai
-      " colorscheme solarized
     endif
 " }}}
 
