@@ -31,6 +31,8 @@ Plug 'wellle/targets.vim'
 Plug 'Shougo/echodoc.vim'
 Plug 'vim-scripts/BufOnly.vim'
 " Plug 'tpope/vim-vinegar'
+" Plug 'ncm2/float-preview.nvim'
+Plug 'rhysd/clever-f.vim'
 
 """"""""""""""""""""
 " Python

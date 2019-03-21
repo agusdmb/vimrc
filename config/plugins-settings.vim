@@ -194,3 +194,9 @@
 " devicons nerdtree{{{
     let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 " }}}
+
+" clever f {{{
+    let g:clever_f_across_no_line = 0
+    let g:clever_f_fix_key_direction = 0
+    let g:clever_f_timeout_ms = 3000
+" }}}

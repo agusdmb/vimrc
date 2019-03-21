@@ -46,7 +46,7 @@ cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 
 " Terminal mappings
-tnoremap <Esc> <C-\><C-n>
+" tnoremap <Esc> <C-\><C-n>
 nnoremap <Leader>t :terminal<CR>
 tnoremap <C-j> <C-\><C-n><C-W>j
 tnoremap <C-k> <C-\><C-n><C-W>k
