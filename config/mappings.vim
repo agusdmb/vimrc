@@ -16,10 +16,6 @@ inoremap kj <Esc>
 cnoremap kj <Esc>
 nnoremap <Space> :nohlsearch<CR>
 nnoremap <CR> o<Esc>
-nnoremap <Leader>p "+p
-vnoremap <Leader>y "+y
-" nnoremap <C-a> ggVG
-nnoremap <leader>Y ggVG"+y
 " nnoremap / /\v
 " vnoremap / /\v
 vmap > >gv
@@ -30,6 +26,12 @@ nnoremap ^ 0
 vnoremap ^ 0
 nnoremap ` '
 nnoremap ' `
+
+" Clipboard related
+nnoremap <Leader>p "+p
+vnoremap <Leader>y "+y
+" nnoremap <C-a> ggVG
+nnoremap <leader>Y ggVG"+y
 
 " Navigation
 nnoremap <C-h> <C-w><C-h>
