@@ -37,7 +37,7 @@
 " }}}
 
 " airline-theme {{{
-    let g:airline_theme='deus'
+    let g:airline_theme='gruvbox'
 " }}}
 
 " easymotion {{{
