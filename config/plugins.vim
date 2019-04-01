@@ -65,12 +65,13 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'kshenoy/vim-signature'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ryanoasis/vim-devicons' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'tomasr/molokai'
+" Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'yggdroot/indentline'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'majutsushi/tagbar'
 " Plug 'docker/docker'
+Plug 'morhetz/gruvbox'
 
 """"""""""""""""""""
 " Markdown

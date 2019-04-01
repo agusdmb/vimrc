@@ -116,9 +116,16 @@
 " }}}
 
 
-" molokai {{{
+" " molokai {{{
+"     if !exists('g:not_finish_vimplug')
+"       colorscheme molokai
+"     endif
+" " }}}
+
+
+" gruvbox {{{
     if !exists('g:not_finish_vimplug')
-      colorscheme molokai
+      colorscheme gruvbox
     endif
 " }}}
 

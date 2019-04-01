@@ -12,3 +12,5 @@ endif
 " This line is so after every save in those typefiles, whitespaces at the end
 " are trim
 autocmd BufWritePre *.{cpp,h,c,py,js,ts,css,sh,html} %s/\s\+$//e
+
+au TermOpen * setlocal nonumber norelativenumber
