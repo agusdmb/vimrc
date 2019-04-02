@@ -11,15 +11,17 @@ nnoremap <Leader>c :Bdelete<CR>
 nnoremap <S-q> <Nop>
 nnoremap ; :
 vnoremap ; :
-inoremap kj <Esc>
+" inoremap kj <Esc>
 " vnoremap kj <Esc>
-cnoremap kj <Esc>
+" cnoremap kj <Esc>
 nnoremap <Space> :nohlsearch<CR>
 nnoremap <CR> o<Esc>
 " nnoremap / /\v
 " vnoremap / /\v
 vmap > >gv
 vmap < <gv
+
+" Swapped this commands
 nnoremap 0 ^
 vnoremap 0 ^
 nnoremap ^ 0
@@ -55,9 +57,11 @@ tnoremap <C-k> <C-\><C-n><C-W>k
 tnoremap <C-h> <C-\><C-n><C-W>h
 tnoremap <C-l> <C-\><C-n><C-W>l
 
+" Quickfix maps
 " nnoremap <M-j> :cn<CR>
-nnoremap ∆ :cn<CR>
 " nnoremap <M-k> :cp<CR>
+" Quickfix maps for macos
+nnoremap ∆ :cn<CR>
 nnoremap ˚ :cp<CR>
 
 nnoremap <F5> :source ~/.config/nvim/init.vim<CR>
@@ -71,4 +75,5 @@ nnoremap <C-right> :vertical resize +1<CR>
 nnoremap <C-up> :resize +1<CR>
 nnoremap <C-down> :resize -1<CR>
 
+" Useful to compare files
 nnoremap <Leader>z :windo set cursorbind! \| windo set scrollbind!<CR>

@@ -2,7 +2,6 @@ syntax on
 
 set number
 set cursorline
-set lazyredraw
 set nowrap
 set wrapmargin=79
 set textwidth=79
@@ -12,15 +11,24 @@ set sidescrolloff=5
 set wildmenu
 set concealcursor=nc
 set conceallevel=0
+
+" Useful when using macros, makes running them multiple times much faster
+set lazyredraw
+
+" Tab related
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
+
+" Search related
 set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+
 set hidden
+
 " set completeopt-=preview
 if !isdirectory("~/.config/nvim/undo/")
     silent !mkdir ~/.config/nvim/undo > /dev/null 2>&1
@@ -28,7 +36,9 @@ endif
 set undofile
 set undodir=$HOME/.config/nvim/undo
 set noswapfile
+
 set foldlevel=3
+
 set splitright
 set splitbelow
 

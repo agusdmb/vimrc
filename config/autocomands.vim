@@ -1,7 +1,9 @@
+" Save with `:W` when sudo needed
 command! W w !sudo tee % > /dev/null
+
 autocmd WinEnter term://* startinsert
-autocmd BufNewFile,BufRead *.{ts,js,html} set shiftwidth=2
-autocmd BufNewFile,BufRead *.{ts,js,html} set tabstop=2
+" autocmd BufNewFile,BufRead *.{ts,js,html} set shiftwidth=2
+" autocmd BufNewFile,BufRead *.{ts,js,html} set tabstop=2
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
