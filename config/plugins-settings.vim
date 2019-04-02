@@ -152,9 +152,9 @@
 " }}}
 
 " incsearch {{{
-    map g/  <Plug>(incsearch-forward)
+    map /  <Plug>(incsearch-forward)
     map ?  <Plug>(incsearch-backward)
-    map / <Plug>(incsearch-stay)
+    map g/ <Plug>(incsearch-stay)
 " }}}
 
 

@@ -3,8 +3,6 @@ syntax on
 set number
 set cursorline
 set nowrap
-set wrapmargin=79
-set textwidth=79
 set scrolloff=7
 set sidescrolloff=5
 " set colorcolumn=80

@@ -40,8 +40,9 @@ nnoremap <C-h> <C-w><C-h>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
+
+" nnoremap <Tab> :bnext<CR>
+" nnoremap <S-Tab> :bprevious<CR>
 nnoremap <Leader>v :vertical split<CR>
 nnoremap <Leader>h :split<CR>
 
@@ -69,11 +70,11 @@ nnoremap <F5> :source ~/.config/nvim/init.vim<CR>
 " Windows
 nnoremap <F8> :vertical resize 80<CR>
 
-" Resizing
-nnoremap <C-left> :vertical resize -1<CR>
-nnoremap <C-right> :vertical resize +1<CR>
-nnoremap <C-up> :resize +1<CR>
-nnoremap <C-down> :resize -1<CR>
+" " Resizing
+" nnoremap <C-left> :vertical resize -1<CR>
+" nnoremap <C-right> :vertical resize +1<CR>
+" nnoremap <C-up> :resize +1<CR>
+" nnoremap <C-down> :resize -1<CR>
 
 " Useful to compare files
 nnoremap <Leader>z :windo set cursorbind! \| windo set scrollbind!<CR>

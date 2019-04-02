@@ -16,3 +16,5 @@ endif
 autocmd BufWritePre *.{cpp,h,c,py,js,ts,css,sh,html} %s/\s\+$//e
 
 au TermOpen * setlocal nonumber norelativenumber
+
+au BufNewFile,BufRead *.py setlocal colorcolumn=88
