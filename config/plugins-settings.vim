@@ -6,7 +6,7 @@
       let g:airline_symbols = {}
     endif
     if !exists('g:airline_powerline_fonts')
-      let g:airline#extensions#tabline#left_sep = ' '
+      let g:airline#extensions#tabline#left_sep = ''
       let g:airline#extensions#tabline#left_alt_sep = '|'
       let g:airline_left_sep          = ''
       let g:airline_left_alt_sep      = '»'
