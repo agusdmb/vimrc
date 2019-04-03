@@ -2,7 +2,7 @@ syntax on
 
 set number
 set cursorline
-set nowrap
+" set nowrap
 set scrolloff=7
 set sidescrolloff=5
 " set colorcolumn=80
@@ -18,6 +18,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
+set breakindent
 
 " Search related
 set incsearch
