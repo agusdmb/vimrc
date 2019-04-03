@@ -54,7 +54,6 @@
 " }}}
 
 
-    " \   'python': ['pylint', 'flake8', 'pydocstyle', 'black', 'mypy'],
 " ale {{{
     let g:ale_linters = {
     \   'python': ['pylint', 'flake8', 'pydocstyle', 'black'],
@@ -80,9 +79,9 @@
 
 " EasyAlign {{{
     " Start interactive EasyAlign in visual mode (e.g. vipga)
-    " xmap ga <Plug>(EasyAlign)
+    xmap ga <Plug>(EasyAlign)
     " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-    " nmap ga <Plug>(EasyAlign)
+    nmap ga <Plug>(EasyAlign)
 " }}}
 
 
@@ -176,25 +175,25 @@
 " Tagbar {{{
     nnoremap <F4> :Tagbar<CR>
 
-" python-mode {{
-    " A lot is disabled, what I'm using:
-    "   breakpoints, virtualenv, motions, syntax,
-    "   indent
-    let g:pymode_breakpoint = 1
-    let g:pymode_breakpoint_bind = '<leader>b'
-    let g:pymode_folding = 1
-    let g:pymode_indent = 1
-    let g:pymode_lint = 0
-    let g:pymode_lint_checkers = ['flake8']
-    let g:pymode_lint_on_write = 0
-    let g:pymode_motion = 1
-    let g:pymode_rope = 0
-    let g:pymode_rope_complete_on_dot = 0
-    let g:pymode_rope_completion = 0
-    let g:pymode_run = 0
-    let g:pymode_options = 0
-    let g:pymode_options_colorcolumn = 0
-" }}}
+" " python-mode {{
+"     " A lot is disabled, what I'm using:
+"     "   breakpoints, virtualenv, motions, syntax,
+"     "   indent
+"     let g:pymode_breakpoint = 1
+"     let g:pymode_breakpoint_bind = '<leader>b'
+"     let g:pymode_folding = 1
+"     let g:pymode_indent = 1
+"     let g:pymode_lint = 0
+"     let g:pymode_lint_checkers = ['flake8']
+"     let g:pymode_lint_on_write = 0
+"     let g:pymode_motion = 1
+"     let g:pymode_rope = 0
+"     let g:pymode_rope_complete_on_dot = 0
+"     let g:pymode_rope_completion = 0
+"     let g:pymode_run = 0
+"     let g:pymode_options = 0
+"     let g:pymode_options_colorcolumn = 0
+" " }}}
 
 " startify {{{
     let g:startify_change_to_dir = 0

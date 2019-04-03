@@ -42,7 +42,7 @@ Plug 'rhysd/clever-f.vim'
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop'}
+" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop'}
 
 """"""""""""""""""""
 " Git
