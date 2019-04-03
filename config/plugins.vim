@@ -5,7 +5,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 """"""""""""""""""""
 
 " Plug 'AndrewRadev/splitjoin.vim'
-" Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 " Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
 Plug 'Chiel92/vim-autoformat'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -42,7 +42,7 @@ Plug 'rhysd/clever-f.vim'
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-Plug 'klen/python-mode', { 'for': 'python' }
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop'}
 
 """"""""""""""""""""
 " Git

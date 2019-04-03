@@ -192,6 +192,7 @@
     let g:pymode_rope_complete_on_dot = 0
     let g:pymode_rope_completion = 0
     let g:pymode_run = 0
+    let g:pymode_options = 0
     let g:pymode_options_colorcolumn = 0
 " }}}
 

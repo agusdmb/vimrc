@@ -19,6 +19,7 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set breakindent
+set linebreak
 
 " Search related
 set incsearch
@@ -43,8 +44,9 @@ set splitbelow
 
 set inccommand=split
 
-" Show arrow if line continues rightwards
+" Show arrow if line continues rightwards or if is wrap
 set listchars=extends:→
+set showbreak=⤷
 
 set termguicolors
 set background=dark
@@ -56,6 +58,14 @@ set diffopt+=vertical
 set updatetime=100
 
 set noshowmode
+
+set nojoinspaces
+
+set spell
+
+set virtualedit=block
+
+set whichwrap=b,s,h,l,<,>
 
 let g:python_host_prog = '/Users/agmarquez/.virtualenvs/neovim2/bin/python2.7'
 let g:python3_host_prog = '/Users/agmarquez/.virtualenvs/neovim3/bin/python3.6'
