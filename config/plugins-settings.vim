@@ -7,7 +7,7 @@
     endif
     if !exists('g:airline_powerline_fonts')
       let g:airline#extensions#tabline#left_sep = ''
-      let g:airline#extensions#tabline#left_alt_sep = '|'
+      let g:airline#extensions#tabline#left_alt_sep = ''
       let g:airline_left_sep          = ''
       let g:airline_left_alt_sep      = '»'
       let g:airline_right_sep         = ''
@@ -40,18 +40,18 @@
     let g:airline_theme='gruvbox'
 " }}}
 
-" easymotion {{{
-    let g:EasyMotion_do_mapping = 0 " Disable default mappings
-    " Jump to anywhere you want with minimal keystrokes, with just one key binding.
-    " `s{char}{label}`
-    " nmap s <Plug>(easymotion-overwin-f)
-    " or
-    " `s{char}{char}{label}`
-    " Need one more keystroke, but on average, it may be more comfortable.
-    nmap s <Plug>(easymotion-overwin-f2)
-    " Turn on case insensitive feature
-    let g:EasyMotion_smartcase = 1
-" }}}
+" " easymotion {{{
+"     let g:EasyMotion_do_mapping = 0 " Disable default mappings
+"     " Jump to anywhere you want with minimal keystrokes, with just one key binding.
+"     " `s{char}{label}`
+"     " nmap s <Plug>(easymotion-overwin-f)
+"     " or
+"     " `s{char}{char}{label}`
+"     " Need one more keystroke, but on average, it may be more comfortable.
+"     nmap s <Plug>(easymotion-overwin-f2)
+"     " Turn on case insensitive feature
+"     let g:EasyMotion_smartcase = 1
+" " }}}
 
 
 " ale {{{
@@ -77,12 +77,12 @@
 " }}}
 
 
-" EasyAlign {{{
-    " Start interactive EasyAlign in visual mode (e.g. vipga)
-    xmap ga <Plug>(EasyAlign)
-    " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-    nmap ga <Plug>(EasyAlign)
-" }}}
+" " EasyAlign {{{
+"     " Start interactive EasyAlign in visual mode (e.g. vipga)
+"     xmap ga <Plug>(EasyAlign)
+"     " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+"     nmap ga <Plug>(EasyAlign)
+" " }}}
 
 
 " " session management {{{
@@ -97,11 +97,11 @@
 " " }}}
 
 
-" FZF {{{
-    nnoremap <C-p> :FZF<CR>
-    nnoremap <Leader>b :Buffers<CR>
-    nnoremap <Leader>a :Ag<CR>
-" }}}
+" " FZF {{{
+"     nnoremap <C-p> :FZF<CR>
+"     nnoremap <Leader>b :Buffers<CR>
+"     nnoremap <Leader>a :Ag<CR>
+" " }}}
 
 
 " deoplete {{{
@@ -145,10 +145,10 @@
     let g:indentLine_setConceal = 0
 " }}}
 
-" autoformat {{{
-    nnoremap <F3> :Autoformat<CR>
-    vnoremap <F3> :Autoformat<CR>
-" }}}
+" " autoformat {{{
+"     nnoremap <F3> :Autoformat<CR>
+"     vnoremap <F3> :Autoformat<CR>
+" " }}}
 
 " incsearch {{{
     map /  <Plug>(incsearch-forward)
@@ -175,29 +175,33 @@
 " Tagbar {{{
     nnoremap <F4> :Tagbar<CR>
 
-" " python-mode {{
-"     " A lot is disabled, what I'm using:
-"     "   breakpoints, virtualenv, motions, syntax,
-"     "   indent
-"     let g:pymode_breakpoint = 1
-"     let g:pymode_breakpoint_bind = '<leader>b'
-"     let g:pymode_folding = 1
-"     let g:pymode_indent = 1
-"     let g:pymode_lint = 0
-"     let g:pymode_lint_checkers = ['flake8']
-"     let g:pymode_lint_on_write = 0
-"     let g:pymode_motion = 1
-"     let g:pymode_rope = 0
-"     let g:pymode_rope_complete_on_dot = 0
-"     let g:pymode_rope_completion = 0
-"     let g:pymode_run = 0
-"     let g:pymode_options = 0
-"     let g:pymode_options_colorcolumn = 0
-" " }}}
-
-" startify {{{
-    let g:startify_change_to_dir = 0
+" python-mode {{
+    " A lot is disabled, what I'm using:
+    "   breakpoints, virtualenv, motions, syntax,
+    "   indent
+    let g:pymode_breakpoint = 1
+    let g:pymode_breakpoint_bind = '<leader>s'
+    let g:pymode_folding = 1
+    let g:pymode_indent = 1
+    let g:pymode_lint = 0
+    let g:pymode_lint_checkers = ['flake8']
+    let g:pymode_lint_on_write = 0
+    let g:pymode_motion = 1
+    let g:pymode_rope = 0
+    let g:pymode_rope_complete_on_dot = 0
+    let g:pymode_rope_completion = 0
+    let g:pymode_run = 0
+    let g:pymode_options = 0
+    let g:pymode_options_colorcolumn = 0
 " }}}
+
+" " startify {{{
+"     let g:startify_change_to_dir = 0
+"     let g:startify_lists = [
+"                 \{ 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+"                 \{ 'type': 'files',     'header': ['   MRU']            },
+"                 \]
+" " }}}
 
 " devicons nerdtree{{{
     let g:WebDevIconsUnicodeDecorateFolderNodes = 1

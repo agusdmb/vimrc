@@ -35,13 +35,19 @@ vnoremap <Leader>y "+y
 " nnoremap <C-a> ggVG
 nnoremap <leader>Y ggVG"+y
 
+" Copy multiple time, paste once
+nnoremap <Leader>M "myy
+vnoremap <Leader>M "my
+nnoremap <Leader>m "Myy
+vnoremap <Leader>m "My
+
 " Navigation
 nnoremap <C-h> <C-w><C-h>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 
-nnoremap <S-Tab> :bnext<CR>
+" nnoremap <Tab> :bnext<CR>
 " nnoremap <S-Tab> :bprevious<CR>
 nnoremap <Leader>v :vertical split<CR>
 nnoremap <Leader>h :split<CR>
@@ -59,11 +65,11 @@ tnoremap <C-h> <C-\><C-n><C-W>h
 tnoremap <C-l> <C-\><C-n><C-W>l
 
 " Quickfix maps
-" nnoremap <M-j> :cn<CR>
-" nnoremap <M-k> :cp<CR>
+nnoremap <M-j> :cn<CR>
+nnoremap <M-k> :cp<CR>
 " Quickfix maps for macos
-nnoremap ∆ :cn<CR>
-nnoremap ˚ :cp<CR>
+" nnoremap ∆ :cn<CR>
+" nnoremap ˚ :cp<CR>
 
 nnoremap <F5> :source ~/.config/nvim/init.vim<CR>
 

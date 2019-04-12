@@ -1,11 +1,13 @@
 syntax on
 
 set number
+set relativenumber
 set cursorline
 " set nowrap
-set scrolloff=7
+set scrolloff=5
 set sidescrolloff=5
-" set colorcolumn=80
+set colorcolumn=80
+set textwidth=80
 set wildmenu
 set concealcursor=nc
 set conceallevel=0
@@ -26,6 +28,8 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+set path=**
+set wildignore=*.pyc
 
 set hidden
 
@@ -46,7 +50,7 @@ set inccommand=split
 
 " Show arrow if line continues rightwards or if is wrap
 set listchars=extends:→
-set showbreak=⤷
+" set showbreak=⤷
 
 set termguicolors
 set background=dark

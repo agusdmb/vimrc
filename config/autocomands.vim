@@ -18,3 +18,10 @@ autocmd BufWritePre *.{cpp,h,c,py,js,ts,css,sh,html} %s/\s\+$//e
 au TermOpen * setlocal nonumber norelativenumber
 
 au BufNewFile,BufRead *.py let &l:colorcolumn=join(range(89,200),",")
+au BufNewFile,BufRead *.py setlocal textwidth=88
+
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set cul
+    autocmd WinLeave * set nocul
+augroup END
