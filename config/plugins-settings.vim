@@ -150,11 +150,11 @@
 "     vnoremap <F3> :Autoformat<CR>
 " " }}}
 
-" incsearch {{{
-    map /  <Plug>(incsearch-forward)
-    map ?  <Plug>(incsearch-backward)
-    map g/ <Plug>(incsearch-stay)
-" }}}
+" " incsearch {{{
+"     map /  <Plug>(incsearch-forward)
+"     map ?  <Plug>(incsearch-backward)
+"     map g/ <Plug>(incsearch-stay)
+" " }}}
 
 
 " vim-signature"{{{
@@ -195,13 +195,13 @@
     let g:pymode_options_colorcolumn = 0
 " }}}
 
-" " startify {{{
-"     let g:startify_change_to_dir = 0
-"     let g:startify_lists = [
-"                 \{ 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-"                 \{ 'type': 'files',     'header': ['   MRU']            },
-"                 \]
-" " }}}
+" startify {{{
+    let g:startify_change_to_dir = 0
+    let g:startify_lists = [
+                \{ 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+                \{ 'type': 'files',     'header': ['   MRU']            },
+                \]
+" }}}
 
 " devicons nerdtree{{{
     let g:WebDevIconsUnicodeDecorateFolderNodes = 1
