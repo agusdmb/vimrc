@@ -74,7 +74,7 @@ nnoremap <M-k> :cp<CR>
 nnoremap <F5> :source ~/.config/nvim/init.vim<CR>
 
 " Windows
-nnoremap <F8> :vertical resize 80<CR>
+" nnoremap <F8> :vertical resize 80<CR>
 
 " " Resizing
 " nnoremap <C-left> :vertical resize -1<CR>

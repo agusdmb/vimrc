@@ -1,3 +1,5 @@
+" vim: foldmethod=marker
+"
 " airline {{{
     set laststatus=2
     " To show the buffers open on the top status bar
@@ -53,29 +55,26 @@
 "     let g:EasyMotion_smartcase = 1
 " " }}}
 
+" " ale {{{
+"     let g:ale_linters = {
+"     \   'python': ['pylint', 'flake8', 'pydocstyle', 'black'],
+"     \}
+"     let g:ale_fixers = {
+"     \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+"     \   'python': ['isort', 'black'],
+"     \}
+"     let g:ale_lint_delay = 1000
+"     " set statusline+=%{ALEGetStatusLine()}
+"     let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+"     let g:ale_python_pylint_change_directory = 0
+"     nnoremap <Leader>f :ALEFix<CR>
+" " }}}
 
-" ale {{{
-    let g:ale_linters = {
-    \   'python': ['pylint', 'flake8', 'pydocstyle', 'black'],
-    \}
-    let g:ale_fixers = {
-    \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-    \   'python': ['isort', 'black'],
-    \}
-    let g:ale_lint_delay = 1000
-    " set statusline+=%{ALEGetStatusLine()}
-    let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-    let g:ale_python_pylint_change_directory = 0
-    nnoremap <Leader>f :ALEFix<CR>
-" }}}
-
-
-" nerdtree {{{
-    nnoremap <Leader>e :NERDTreeToggle<CR>
-    " nnoremap <Leader>f :NERDTreeFocus<CR>
-    let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-" }}}
-
+" " nerdtree {{{
+"     nnoremap <Leader>e :NERDTreeToggle<CR>
+"     " nnoremap <Leader>f :NERDTreeFocus<CR>
+"     let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+" " }}}
 
 " " EasyAlign {{{
 "     " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -83,7 +82,6 @@
 "     " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 "     nmap ga <Plug>(EasyAlign)
 " " }}}
-
 
 " " session management {{{
 "     nnoremap <leader>so :OpenSession<Space>
@@ -96,24 +94,21 @@
 "     let g:session_command_aliases = 1
 " " }}}
 
-
 " " FZF {{{
 "     nnoremap <C-p> :FZF<CR>
 "     nnoremap <Leader>b :Buffers<CR>
 "     nnoremap <Leader>a :Ag<CR>
 " " }}}
 
-
-" deoplete {{{
-    " Use deoplete.
-    let g:deoplete#enable_at_startup = 1
-    inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-    inoremap <expr><S-tab> pumvisible() ? "\<c-p>" : "\<S-tab>"
-    let g:deoplete#sources#jedi#show_docstring = 1
-    let g:deoplete#enable_ignore_case = 1
-    let g:deoplete#enable_smart_case = 1
-" }}}
-
+" " deoplete {{{
+"     " Use deoplete.
+"     let g:deoplete#enable_at_startup = 1
+"     inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+"     inoremap <expr><S-tab> pumvisible() ? "\<c-p>" : "\<S-tab>"
+"     let g:deoplete#sources#jedi#show_docstring = 1
+"     let g:deoplete#enable_ignore_case = 1
+"     let g:deoplete#enable_smart_case = 1
+" " }}}
 
 " " molokai {{{
 "     if !exists('g:not_finish_vimplug')
@@ -121,18 +116,15 @@
 "     endif
 " " }}}
 
-
 " gruvbox {{{
     if !exists('g:not_finish_vimplug')
       colorscheme gruvbox
     endif
 " }}}
 
-
-" gundo {{{
-    nnoremap <Leader>u :GundoToggle<CR>
-" }}}
-
+" " gundo {{{
+"     nnoremap <Leader>u :GundoToggle<CR>
+" " }}}
 
 " gitgutter {{{
     let g:gitgutter_map_keys = 0
@@ -140,10 +132,9 @@
     nmap [c <Plug>GitGutterPrevHunk
 " }}}
 
-
-" indentline {{{
-    let g:indentLine_setConceal = 0
-" }}}
+" " indentline {{{
+"     let g:indentLine_setConceal = 0
+" " }}}
 
 " " autoformat {{{
 "     nnoremap <F3> :Autoformat<CR>
@@ -156,7 +147,6 @@
 "     map g/ <Plug>(incsearch-stay)
 " " }}}
 
-
 " vim-signature"{{{
     "Support for gitgutter. When this =1 :
     "The mark is displayed over the gitgutter sign, but inherits the same colour so
@@ -164,36 +154,37 @@
     let g:SignatureMarkTextHLDynamic = 1
 " }}}
 
-" Goyo & Limelight {{{
-    nnoremap <Leader>l :Goyo <Bar> Limelight!!<CR>
-" }}}
+" " Goyo & Limelight {{{
+"     nnoremap <Leader>l :Goyo <Bar> Limelight!!<CR>
+" " }}}
 
 " Echodoc {{{
     let g:echodoc#enable_at_startup = 1
 " }}}
 
 " Tagbar {{{
-    nnoremap <F4> :Tagbar<CR>
-
-" python-mode {{
-    " A lot is disabled, what I'm using:
-    "   breakpoints, virtualenv, motions, syntax,
-    "   indent
-    let g:pymode_breakpoint = 1
-    let g:pymode_breakpoint_bind = '<leader>s'
-    let g:pymode_folding = 1
-    let g:pymode_indent = 1
-    let g:pymode_lint = 0
-    let g:pymode_lint_checkers = ['flake8']
-    let g:pymode_lint_on_write = 0
-    let g:pymode_motion = 1
-    let g:pymode_rope = 0
-    let g:pymode_rope_complete_on_dot = 0
-    let g:pymode_rope_completion = 0
-    let g:pymode_run = 0
-    let g:pymode_options = 0
-    let g:pymode_options_colorcolumn = 0
+"     nnoremap <F4> :Tagbar<CR>
 " }}}
+
+" " python-mode {{{
+"     " A lot is disabled, what I'm using:
+"     "   breakpoints, virtualenv, motions, syntax,
+"     "   indent
+"     let g:pymode_breakpoint = 1
+"     let g:pymode_breakpoint_bind = '<leader>s'
+"     let g:pymode_folding = 1
+"     let g:pymode_indent = 1
+"     let g:pymode_lint = 0
+"     let g:pymode_lint_checkers = ['flake8']
+"     let g:pymode_lint_on_write = 0
+"     let g:pymode_motion = 1
+"     let g:pymode_rope = 0
+"     let g:pymode_rope_complete_on_dot = 0
+"     let g:pymode_rope_completion = 0
+"     let g:pymode_run = 0
+"     let g:pymode_options = 0
+"     let g:pymode_options_colorcolumn = 0
+" " }}}
 
 " startify {{{
     let g:startify_change_to_dir = 0
@@ -203,12 +194,12 @@
                 \]
 " }}}
 
-" devicons nerdtree{{{
-    let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-" }}}
+" " devicons nerdtree{{{
+"     let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+" " }}}
 
-" clever f {{{
-    let g:clever_f_across_no_line = 0
-    let g:clever_f_fix_key_direction = 0
-    let g:clever_f_timeout_ms = 3000
-" }}}
+" " clever f {{{
+"     let g:clever_f_across_no_line = 0
+"     let g:clever_f_fix_key_direction = 0
+"     let g:clever_f_timeout_ms = 3000
+" " }}}

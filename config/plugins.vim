@@ -14,31 +14,31 @@ Plug 'christoomey/vim-tmux-navigator'
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-slash'
-Plug 'kana/vim-textobj-indent' | Plug 'kana/vim-textobj-user'
+" Plug 'kana/vim-textobj-indent' | Plug 'kana/vim-textobj-user'
 Plug 'mhinz/vim-startify'
 Plug 'moll/vim-bbye'
 " Plug 'nelstrom/vim-visual-star-search'
-Plug 'raimondi/delimitmate'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'sjl/gundo.vim'
+" Plug 'raimondi/delimitmate'
+" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch'
+" Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-scripts/matchit.zip'
+" Plug 'vim-scripts/matchit.zip'
 Plug 'w0rp/ale'
-Plug 'wellle/targets.vim'
+" Plug 'wellle/targets.vim'
 Plug 'Shougo/echodoc.vim'
 Plug 'vim-scripts/BufOnly.vim'
-" Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-vinegar'
 " Plug 'ncm2/float-preview.nvim'
-Plug 'rhysd/clever-f.vim'
+" Plug 'rhysd/clever-f.vim'
 
 """"""""""""""""""""
 " Python
 """"""""""""""""""""
 
-" Plug 'tmhedberg/simpylfold'
+Plug 'tmhedberg/simpylfold'
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
@@ -56,15 +56,15 @@ Plug 'tpope/vim-rhubarb'
 " Visual
 """"""""""""""""""""
 
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/vim-peekaboo'
+" Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/limelight.vim'
+" Plug 'junegunn/vim-peekaboo'
 Plug 'kshenoy/vim-signature'
 Plug 'machakann/vim-highlightedyank'
-Plug 'ryanoasis/vim-devicons' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'ryanoasis/vim-devicons' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'yggdroot/indentline'
