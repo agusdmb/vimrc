@@ -47,6 +47,9 @@ nnoremap <C-l> <C-w><C-l>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 
+nnoremap gb :bn<CR>
+nnoremap gB :bp<CR>
+
 " nnoremap <Tab> :bnext<CR>
 " nnoremap <S-Tab> :bprevious<CR>
 nnoremap <Leader>v :vertical split<CR>

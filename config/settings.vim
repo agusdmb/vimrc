@@ -1,7 +1,7 @@
 syntax on
 
 set number
-set relativenumber
+" set relativenumber
 set cursorline
 " set nowrap
 set scrolloff=5
@@ -28,7 +28,7 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-set path=**
+" set path=.
 set wildignore=*.pyc
 
 set hidden
@@ -69,7 +69,7 @@ set spell
 
 set virtualedit=block
 
-set whichwrap=b,s,h,l,<,>
+" set whichwrap=b,s,h,l,<,>
 
 let g:python_host_prog = '/Users/agmarquez/.virtualenvs/neovim2/bin/python2.7'
 let g:python3_host_prog = '/Users/agmarquez/.virtualenvs/neovim3/bin/python3.6'

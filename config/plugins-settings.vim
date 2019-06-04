@@ -1,5 +1,5 @@
 " vim: foldmethod=marker
-"
+
 " airline {{{
     set laststatus=2
     " To show the buffers open on the top status bar
@@ -55,26 +55,26 @@
 "     let g:EasyMotion_smartcase = 1
 " " }}}
 
-" " ale {{{
-"     let g:ale_linters = {
-"     \   'python': ['pylint', 'flake8', 'pydocstyle', 'black'],
-"     \}
-"     let g:ale_fixers = {
-"     \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-"     \   'python': ['isort', 'black'],
-"     \}
-"     let g:ale_lint_delay = 1000
-"     " set statusline+=%{ALEGetStatusLine()}
-"     let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-"     let g:ale_python_pylint_change_directory = 0
-"     nnoremap <Leader>f :ALEFix<CR>
-" " }}}
+" ale {{{
+    let g:ale_linters = {
+    \   'python': ['pylint', 'flake8', 'pydocstyle', 'black'],
+    \}
+    let g:ale_fixers = {
+    \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+    \   'python': ['isort', 'black'],
+    \}
+    let g:ale_lint_delay = 1000
+    " set statusline+=%{ALEGetStatusLine()}
+    let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+    let g:ale_python_pylint_change_directory = 0
+    nnoremap <Leader>f :ALEFix<CR>
+" }}}
 
-" " nerdtree {{{
-"     nnoremap <Leader>e :NERDTreeToggle<CR>
-"     " nnoremap <Leader>f :NERDTreeFocus<CR>
-"     let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-" " }}}
+" nerdtree {{{
+    nnoremap <Leader>e :NERDTreeToggle<CR>
+    " nnoremap <Leader>f :NERDTreeFocus<CR>
+    let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+" }}}
 
 " " EasyAlign {{{
 "     " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -94,21 +94,21 @@
 "     let g:session_command_aliases = 1
 " " }}}
 
-" " FZF {{{
-"     nnoremap <C-p> :FZF<CR>
-"     nnoremap <Leader>b :Buffers<CR>
-"     nnoremap <Leader>a :Ag<CR>
-" " }}}
+" FZF {{{
+    nnoremap <C-p> :FZF<CR>
+    nnoremap <Leader>b :Buffers<CR>
+    nnoremap <Leader>a :Ag<CR>
+" }}}
 
-" " deoplete {{{
-"     " Use deoplete.
-"     let g:deoplete#enable_at_startup = 1
-"     inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-"     inoremap <expr><S-tab> pumvisible() ? "\<c-p>" : "\<S-tab>"
-"     let g:deoplete#sources#jedi#show_docstring = 1
-"     let g:deoplete#enable_ignore_case = 1
-"     let g:deoplete#enable_smart_case = 1
-" " }}}
+" deoplete {{{
+    " Use deoplete.
+    let g:deoplete#enable_at_startup = 1
+    inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+    inoremap <expr><S-tab> pumvisible() ? "\<c-p>" : "\<S-tab>"
+    let g:deoplete#sources#jedi#show_docstring = 1
+    let g:deoplete#enable_ignore_case = 1
+    let g:deoplete#enable_smart_case = 1
+" }}}
 
 " " molokai {{{
 "     if !exists('g:not_finish_vimplug')
@@ -166,25 +166,25 @@
 "     nnoremap <F4> :Tagbar<CR>
 " }}}
 
-" " python-mode {{{
-"     " A lot is disabled, what I'm using:
-"     "   breakpoints, virtualenv, motions, syntax,
-"     "   indent
-"     let g:pymode_breakpoint = 1
-"     let g:pymode_breakpoint_bind = '<leader>s'
-"     let g:pymode_folding = 1
-"     let g:pymode_indent = 1
-"     let g:pymode_lint = 0
-"     let g:pymode_lint_checkers = ['flake8']
-"     let g:pymode_lint_on_write = 0
-"     let g:pymode_motion = 1
-"     let g:pymode_rope = 0
-"     let g:pymode_rope_complete_on_dot = 0
-"     let g:pymode_rope_completion = 0
-"     let g:pymode_run = 0
-"     let g:pymode_options = 0
-"     let g:pymode_options_colorcolumn = 0
-" " }}}
+" python-mode {{{
+    " A lot is disabled, what I'm using:
+    "   breakpoints, virtualenv, motions, syntax,
+    "   indent
+    let g:pymode_breakpoint = 1
+    let g:pymode_breakpoint_bind = '<leader>s'
+    let g:pymode_folding = 1
+    let g:pymode_indent = 1
+    let g:pymode_lint = 0
+    let g:pymode_lint_checkers = ['flake8']
+    let g:pymode_lint_on_write = 0
+    let g:pymode_motion = 1
+    let g:pymode_rope = 0
+    let g:pymode_rope_complete_on_dot = 0
+    let g:pymode_rope_completion = 0
+    let g:pymode_run = 0
+    let g:pymode_options = 0
+    let g:pymode_options_colorcolumn = 0
+" }}}
 
 " startify {{{
     let g:startify_change_to_dir = 0
@@ -194,12 +194,19 @@
                 \]
 " }}}
 
-" " devicons nerdtree{{{
-"     let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-" " }}}
+" devicons nerdtree{{{
+    let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+" }}}
 
 " " clever f {{{
 "     let g:clever_f_across_no_line = 0
 "     let g:clever_f_fix_key_direction = 0
 "     let g:clever_f_timeout_ms = 3000
 " " }}}
+
+" delimitmate {{{
+-   " Para que al apretar enter entre (|) o [|] o {|} baje el segundo y quede el cursor al medio
+    let delimitMate_expand_cr = 1
+    " Parecido pero para que cuando se apreta space en (|) quede ( | )
+    let delimitMate_expand_space = 1
+" -" }}}}}}"
