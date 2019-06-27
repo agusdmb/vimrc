@@ -57,12 +57,13 @@
 
 " ale {{{
     let g:ale_linters = {
-    \   'python': ['pylint', 'flake8', 'pydocstyle', 'black'],
+    \   'python': ['pylint', 'flake8', 'pydocstyle', 'black', 'mypy'],
     \}
     let g:ale_fixers = {
     \   '*': ['remove_trailing_lines', 'trim_whitespace'],
     \   'python': ['isort', 'black'],
     \}
+    let g:ale_python_mypy_options='--ignore-missing-imports'
     let g:ale_lint_delay = 1000
     " set statusline+=%{ALEGetStatusLine()}
     let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
@@ -166,25 +167,25 @@
 "     nnoremap <F4> :Tagbar<CR>
 " }}}
 
-" python-mode {{{
-    " A lot is disabled, what I'm using:
-    "   breakpoints, virtualenv, motions, syntax,
-    "   indent
-    let g:pymode_breakpoint = 1
-    let g:pymode_breakpoint_bind = '<leader>s'
-    let g:pymode_folding = 1
-    let g:pymode_indent = 1
-    let g:pymode_lint = 0
-    let g:pymode_lint_checkers = ['flake8']
-    let g:pymode_lint_on_write = 0
-    let g:pymode_motion = 1
-    let g:pymode_rope = 0
-    let g:pymode_rope_complete_on_dot = 0
-    let g:pymode_rope_completion = 0
-    let g:pymode_run = 0
-    let g:pymode_options = 0
-    let g:pymode_options_colorcolumn = 0
-" }}}
+" " python-mode {{{
+"     " A lot is disabled, what I'm using:
+"     "   breakpoints, virtualenv, motions, syntax,
+"     "   indent
+"     let g:pymode_breakpoint = 1
+"     let g:pymode_breakpoint_bind = '<leader>s'
+"     let g:pymode_folding = 1
+"     let g:pymode_indent = 1
+"     let g:pymode_lint = 0
+"     let g:pymode_lint_checkers = ['flake8']
+"     let g:pymode_lint_on_write = 0
+"     let g:pymode_motion = 1
+"     let g:pymode_rope = 0
+"     let g:pymode_rope_complete_on_dot = 0
+"     let g:pymode_rope_completion = 0
+"     let g:pymode_run = 0
+"     let g:pymode_options = 0
+"     let g:pymode_options_colorcolumn = 0
+" " }}}
 
 " startify {{{
     let g:startify_change_to_dir = 0

@@ -20,8 +20,10 @@ au TermOpen * setlocal nonumber norelativenumber
 au BufNewFile,BufRead *.py let &l:colorcolumn=join(range(89,200),",")
 au BufNewFile,BufRead *.py setlocal textwidth=88
 
-augroup BgHighlight
-    autocmd!
-    autocmd WinEnter * set cul
-    autocmd WinLeave * set nocul
-augroup END
+" augroup BgHighlight
+"     autocmd!
+"     autocmd WinEnter * set cul
+"     autocmd WinLeave * set nocul
+" augroup END
+
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
