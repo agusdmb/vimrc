@@ -71,5 +71,5 @@ set virtualedit=block
 
 " set whichwrap=b,s,h,l,<,>
 
-let g:python_host_prog = '/Users/agmarquez/.virtualenvs/neovim2/bin/python2.7'
-let g:python3_host_prog = '/Users/agmarquez/.virtualenvs/neovim3/bin/python3.6'
+let g:python_host_prog = '/Users/agmarquez/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/agmarquez/.pyenv/versions/neovim3/bin/python'

@@ -33,6 +33,12 @@ Plug 'vim-scripts/BufOnly.vim'
 Plug 'tpope/vim-vinegar'
 " Plug 'ncm2/float-preview.nvim'
 " Plug 'rhysd/clever-f.vim'
+Plug 'thalesmello/webcomplete.vim'
+if has('win32') || has('win64')
+  Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
+else
+  Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+endif
 
 """"""""""""""""""""
 " Python
@@ -43,6 +49,7 @@ Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop'}
+" Plug 'szymonmaszke/vimpyter' "vim-plug
 
 """"""""""""""""""""
 " Git
@@ -51,6 +58,7 @@ Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'rhysd/git-messenger.vim'
 
 """"""""""""""""""""
 " Visual
