@@ -11,13 +11,11 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'christoomey/vim-tmux-navigator'
 " Plug 'easymotion/vim-easymotion'
-" Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-slash'
 Plug 'kana/vim-textobj-indent' | Plug 'kana/vim-textobj-user'
 Plug 'mhinz/vim-startify'
 Plug 'moll/vim-bbye'
-" Plug 'nelstrom/vim-visual-star-search'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Plug 'sjl/gundo.vim'
@@ -34,11 +32,7 @@ Plug 'tpope/vim-vinegar'
 " Plug 'ncm2/float-preview.nvim'
 " Plug 'rhysd/clever-f.vim'
 Plug 'thalesmello/webcomplete.vim'
-if has('win32') || has('win64')
-  Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
-else
-  Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
-endif
+Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
 """"""""""""""""""""
 " Python

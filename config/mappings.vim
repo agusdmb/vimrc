@@ -15,7 +15,6 @@ vnoremap ; :
 " vnoremap kj <Esc>
 " cnoremap kj <Esc>
 nnoremap <Space> :nohlsearch<CR>
-nnoremap <CR> o<Esc>
 " nnoremap / /\v
 " vnoremap / /\v
 vmap > >gv

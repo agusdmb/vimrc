@@ -57,8 +57,9 @@
 
 " ale {{{
     let g:ale_linters = {
-    \   'python': ['pylint', 'flake8', 'pydocstyle', 'black', 'mypy'],
+    \   'python': ['pylint', 'flake8', 'black', 'mypy'],
     \}
+    " 'pydocstyle'
     let g:ale_fixers = {
     \   '*': ['remove_trailing_lines', 'trim_whitespace'],
     \   'python': ['isort', 'black'],
