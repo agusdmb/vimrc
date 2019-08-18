@@ -1,10 +1,14 @@
 let mapleader = ','
 
 nnoremap ; :
+vnoremap ; :
 
 nnoremap <leader>q :q<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>x :x<cr>
+
+nnoremap gb :bnext<cr>
+nnoremap gB :bprev<cr>
 
 nnoremap <leader>h :split<cr>
 nnoremap <leader>v :vertical split<cr>
@@ -15,4 +19,15 @@ nnoremap <c-l> <c-w><c-l>
 nnoremap <c-h> <c-w><c-h>
 
 set number
+set relativenumber
+
 set cursorline
+
+set path=**
+
+set scrolloff=7
+
+set completeopt=menu,preview,noinsert,menuone
+set complete=.,w,b,u,U,i,d,t,k
+
+colorscheme peachpuff
