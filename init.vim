@@ -1,11 +1,13 @@
+colorscheme peachpuff
+
 let mapleader = ','
 
 nnoremap ; :
 vnoremap ; :
 
-nnoremap <leader>q :q<cr>
-nnoremap <leader>w :w<cr>
-nnoremap <leader>x :x<cr>
+nnoremap <leader>q :quit<cr>
+nnoremap <leader>w :update<cr>
+nnoremap <leader>x :exit<cr>
 
 nnoremap gb :bnext<cr>
 nnoremap gB :bprev<cr>
@@ -30,4 +32,10 @@ set scrolloff=7
 set completeopt=menu,preview,noinsert,menuone
 set complete=.,w,b,u,U,i,d,t,k
 
-colorscheme peachpuff
+set ignorecase
+set smartcase
+
+set hidden
+
+let g:netrw_hide = 1
+let g:netrw_liststyle = 3
