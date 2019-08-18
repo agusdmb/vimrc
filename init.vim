@@ -29,7 +29,7 @@ set path=**
 
 set scrolloff=7
 
-set completeopt=menu,preview,noinsert,menuone
+set completeopt=menu,preview,menuone
 set complete=.,w,b,u,U,i,d,t,k
 
 set ignorecase
@@ -44,3 +44,7 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 20
 
 nnoremap <leader>e :Vexplore<cr>
+
+" Only usefull with my pyenv configuration
+let g:python_host_prog = '/Users/agmarquez/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/agmarquez/.pyenv/versions/neovim3/bin/python'
