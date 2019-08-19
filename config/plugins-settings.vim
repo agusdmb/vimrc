@@ -42,19 +42,6 @@
     let g:airline_theme='gruvbox'
 " }}}
 
-" " easymotion {{{
-"     let g:EasyMotion_do_mapping = 0 " Disable default mappings
-"     " Jump to anywhere you want with minimal keystrokes, with just one key binding.
-"     " `s{char}{label}`
-"     " nmap s <Plug>(easymotion-overwin-f)
-"     " or
-"     " `s{char}{char}{label}`
-"     " Need one more keystroke, but on average, it may be more comfortable.
-"     nmap s <Plug>(easymotion-overwin-f2)
-"     " Turn on case insensitive feature
-"     let g:EasyMotion_smartcase = 1
-" " }}}
-
 " ale {{{
     let g:ale_linters = {
     \   'python': ['pylint', 'flake8', 'black', 'mypy'],
@@ -78,24 +65,6 @@
     let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 " }}}
 
-" " EasyAlign {{{
-"     " Start interactive EasyAlign in visual mode (e.g. vipga)
-"     xmap ga <Plug>(EasyAlign)
-"     " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-"     nmap ga <Plug>(EasyAlign)
-" " }}}
-
-" " session management {{{
-"     nnoremap <leader>so :OpenSession<Space>
-"     nnoremap <leader>ss :SaveSession<Space>
-"     nnoremap <leader>sd :DeleteSession<CR>
-"     nnoremap <leader>sc :CloseSession<CR>
-"     let g:session_directory = "~/.config/nvim/sessions"
-"     let g:session_autoload = "no"
-"     let g:session_autosave = "no"
-"     let g:session_command_aliases = 1
-" " }}}
-
 " FZF {{{
     nnoremap <C-p> :FZF<CR>
     nnoremap <Leader>b :Buffers<CR>
@@ -111,12 +80,6 @@
     let g:deoplete#enable_ignore_case = 1
     let g:deoplete#enable_smart_case = 1
 " }}}
-
-" " molokai {{{
-"     if !exists('g:not_finish_vimplug')
-"       colorscheme molokai
-"     endif
-" " }}}
 
 " gruvbox {{{
     if !exists('g:not_finish_vimplug')
@@ -141,12 +104,6 @@
 " " autoformat {{{
 "     nnoremap <F3> :Autoformat<CR>
 "     vnoremap <F3> :Autoformat<CR>
-" " }}}
-
-" " incsearch {{{
-"     map /  <Plug>(incsearch-forward)
-"     map ?  <Plug>(incsearch-backward)
-"     map g/ <Plug>(incsearch-stay)
 " " }}}
 
 " vim-signature"{{{

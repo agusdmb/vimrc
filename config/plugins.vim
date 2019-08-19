@@ -6,11 +6,10 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 
 " Plug 'AndrewRadev/splitjoin.vim'
 " Plug 'junegunn/vim-easy-align'
-" Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
 " Plug 'Chiel92/vim-autoformat'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 Plug 'christoomey/vim-tmux-navigator'
-" Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-slash'
 Plug 'kana/vim-textobj-indent' | Plug 'kana/vim-textobj-user'
@@ -28,11 +27,10 @@ Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'Shougo/echodoc.vim'
 Plug 'vim-scripts/BufOnly.vim'
-Plug 'tpope/vim-vinegar'
+" Plug 'tpope/vim-vinegar'
 " Plug 'ncm2/float-preview.nvim'
 " Plug 'rhysd/clever-f.vim'
 Plug 'thalesmello/webcomplete.vim'
-Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 
 """"""""""""""""""""
 " Python
@@ -67,7 +65,6 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'kshenoy/vim-signature'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ryanoasis/vim-devicons' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'yggdroot/indentline'
 Plug 'yuttie/comfortable-motion.vim'

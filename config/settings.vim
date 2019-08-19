@@ -1,12 +1,12 @@
 syntax on
 
 set number
-" set relativenumber
+set relativenumber
 set cursorline
 " set nowrap
 set scrolloff=5
 set sidescrolloff=5
-set colorcolumn=80
+" set colorcolumn=80
 set textwidth=80
 set wildmenu
 set concealcursor=nc
@@ -33,7 +33,6 @@ set wildignore=*.pyc
 
 set hidden
 
-" set completeopt-=preview
 if !isdirectory("~/.config/nvim/undo/")
     silent !mkdir ~/.config/nvim/undo > /dev/null 2>&1
 endif

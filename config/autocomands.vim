@@ -26,4 +26,4 @@ au BufNewFile,BufRead *.py setlocal textwidth=88
 "     autocmd WinLeave * set nocul
 " augroup END
 
-command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+" command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)

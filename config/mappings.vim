@@ -4,7 +4,6 @@ let mapleader = ','
 nnoremap <Leader>w :update<CR>
 nnoremap <Leader>q :quit<CR>
 nnoremap <Leader>x :exit<CR>
-nnoremap <Leader>n :enew<CR>
 nnoremap <Leader>c :Bdelete<CR>
 
 " Personal preferences
@@ -32,7 +31,7 @@ nnoremap ' `
 nnoremap <Leader>p "+p
 vnoremap <Leader>y "+y
 " nnoremap <C-a> ggVG
-nnoremap <leader>Y ggVG"+y
+" nnoremap <leader>Y ggVG"+y
 
 " Copy multiple time, paste once
 nnoremap <Leader>M "myy
@@ -69,16 +68,10 @@ tnoremap <C-l> <C-\><C-n><C-W>l
 " Quickfix maps
 nnoremap <M-j> :cn<CR>
 nnoremap <M-k> :cp<CR>
-" Quickfix maps for macos
-" nnoremap ∆ :cn<CR>
-" nnoremap ˚ :cp<CR>
 
 nnoremap <F5> :source ~/.config/nvim/init.vim<CR>
 
-" Windows
-" nnoremap <F8> :vertical resize 80<CR>
-
-" " Resizing
+" " Resizing (doesn't work in macos)
 " nnoremap <C-left> :vertical resize -1<CR>
 " nnoremap <C-right> :vertical resize +1<CR>
 " nnoremap <C-up> :resize +1<CR>
