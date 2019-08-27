@@ -79,3 +79,10 @@ nnoremap <F5> :source ~/.config/nvim/init.vim<CR>
 
 " Useful to compare files
 nnoremap <Leader>z :windo set cursorbind! \| windo set scrollbind!<CR>
+
+" " Center screen on next/previous selection.
+" nnoremap n nzz
+" nnoremap N Nzz
+" " Last and next jump should center too.
+" nnoremap <C-o> <C-o>zz
+" nnoremap <C-i> <C-i>zz

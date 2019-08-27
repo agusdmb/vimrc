@@ -78,4 +78,10 @@ Plug 'morhetz/gruvbox'
 
 " Plug 'suan/vim-instant-markdown' " npm -g install instant-markdown-d
 
+""""""""""""""""""""
+" Go
+""""""""""""""""""""
+
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+
 call plug#end()

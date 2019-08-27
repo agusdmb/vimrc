@@ -46,6 +46,7 @@
     let g:ale_linters = {
     \   'python': ['pylint', 'flake8', 'black', 'mypy'],
     \}
+    " \   'go': ['gometalinter', 'gofmt'],
     " 'pydocstyle'
     let g:ale_fixers = {
     \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -79,6 +80,7 @@
     let g:deoplete#sources#jedi#show_docstring = 1
     let g:deoplete#enable_ignore_case = 1
     let g:deoplete#enable_smart_case = 1
+    call deoplete#custom#source('jedi', 'rank', 9999)
 " }}}
 
 " gruvbox {{{
@@ -169,3 +171,7 @@
     " Parecido pero para que cuando se apreta space en (|) quede ( | )
     let delimitMate_expand_space = 1
 " -" }}}}}}"
+
+" junegunn/vim-slash {{{
+    " noremap <plug>(slash-after) zz
+" }}}
