@@ -53,6 +53,7 @@
     \   'python': ['isort', 'black'],
     \}
     let g:ale_python_mypy_options='--ignore-missing-imports'
+    let g:ale_python_pylint_options='--missing-docstring'
     let g:ale_lint_delay = 1000
     " set statusline+=%{ALEGetStatusLine()}
     let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']

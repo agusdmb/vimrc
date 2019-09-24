@@ -20,10 +20,10 @@ vmap > >gv
 vmap < <gv
 
 " Swapped this commands
-nnoremap 0 ^
-vnoremap 0 ^
-nnoremap ^ 0
-vnoremap ^ 0
+" nnoremap 0 ^
+" vnoremap 0 ^
+" nnoremap ^ 0
+" vnoremap ^ 0
 nnoremap ` '
 nnoremap ' `
 
