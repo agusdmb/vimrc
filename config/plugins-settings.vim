@@ -177,3 +177,8 @@
 " junegunn/vim-slash {{{
     " noremap <plug>(slash-after) zz
 " }}}
+
+
+" tagbar {{{
+    nnoremap <Leader>t :Tags<CR>
+" }}}

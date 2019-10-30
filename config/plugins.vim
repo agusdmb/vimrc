@@ -9,7 +9,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 " Plug 'Chiel92/vim-autoformat'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-slash'
 Plug 'kana/vim-textobj-indent' | Plug 'kana/vim-textobj-user'
