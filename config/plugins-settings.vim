@@ -126,7 +126,7 @@
 " }}}
 
 " Tagbar {{{
-"     nnoremap <F4> :Tagbar<CR>
+    nnoremap <F4> :Tagbar<CR>
 " }}}
 
 " " python-mode {{{
