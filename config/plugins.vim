@@ -8,16 +8,16 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 " Plug 'junegunn/vim-easy-align'
 " Plug 'Chiel92/vim-autoformat'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+" Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 " Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-slash'
+" Plug 'junegunn/vim-slash'
 Plug 'kana/vim-textobj-indent' | Plug 'kana/vim-textobj-user'
 Plug 'mhinz/vim-startify'
 Plug 'moll/vim-bbye'
 Plug 'raimondi/delimitmate'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" Plug 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-commentary'
 " Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
@@ -25,9 +25,9 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/matchit.zip'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
-Plug 'Shougo/echodoc.vim'
+" Plug 'Shougo/echodoc.vim'
 Plug 'vim-scripts/BufOnly.vim'
-Plug 'tpope/vim-vinegar'
+" Plug 'tpope/vim-vinegar'
 " Plug 'ncm2/float-preview.nvim'
 " Plug 'rhysd/clever-f.vim'
 " Plug 'thalesmello/webcomplete.vim'
@@ -61,7 +61,7 @@ Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
 " Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/limelight.vim'
-" Plug 'junegunn/vim-peekaboo'
+Plug 'junegunn/vim-peekaboo'
 Plug 'kshenoy/vim-signature'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ryanoasis/vim-devicons' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -71,6 +71,8 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'majutsushi/tagbar'
 " Plug 'docker/docker'
 Plug 'morhetz/gruvbox'
+" Plug 'camspiers/animate.vim'
+" Plug 'camspiers/lens.vim'
 
 """"""""""""""""""""
 " Markdown
@@ -82,6 +84,6 @@ Plug 'morhetz/gruvbox'
 " Go
 """"""""""""""""""""
 
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 call plug#end()

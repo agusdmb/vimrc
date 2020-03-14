@@ -29,6 +29,7 @@ nnoremap ' `
 
 " Clipboard related
 nnoremap <Leader>p "+p
+nnoremap <Leader>y "+y
 vnoremap <Leader>y "+y
 " nnoremap <C-a> ggVG
 " nnoremap <leader>Y ggVG"+y

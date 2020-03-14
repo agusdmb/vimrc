@@ -1,13 +1,13 @@
 syntax on
 
 set number
-set relativenumber
+" set relativenumber
 set cursorline
-" set nowrap
-set scrolloff=5
-set sidescrolloff=5
-" set colorcolumn=80
-set textwidth=80
+set nowrap
+" set scrolloff=5
+" set sidescrolloff=5
+" set colorcolumn=120
+set textwidth=120
 set wildmenu
 set concealcursor=nc
 set conceallevel=0

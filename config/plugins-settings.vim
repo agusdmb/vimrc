@@ -43,6 +43,7 @@
 " }}}
 
 " ale {{{
+    "   'python': ['pylint', 'flake8', 'black', 'mypy', 'vulture'],
     let g:ale_linters = {
     \   'python': ['pylint', 'flake8', 'black', 'mypy'],
     \}
@@ -54,6 +55,7 @@
     \}
     let g:ale_python_mypy_options='--ignore-missing-imports'
     let g:ale_python_pylint_options='--missing-docstring'
+    let g:ale_python_black_options='-S -l 120'
     let g:ale_lint_delay = 1000
     " set statusline+=%{ALEGetStatusLine()}
     let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
@@ -72,6 +74,7 @@
     nnoremap <Leader>b :Buffers<CR>
     nnoremap <Leader>a :Ag<CR>
     nnoremap <Leader>l :Lines<CR>
+    nnoremap <Leader>t :Tags<CR>
 " }}}
 
 " deoplete {{{
@@ -82,7 +85,7 @@
     let g:deoplete#sources#jedi#show_docstring = 1
     let g:deoplete#enable_ignore_case = 1
     let g:deoplete#enable_smart_case = 1
-    call deoplete#custom#source('jedi', 'rank', 9999)
+    " call deoplete#custom#source('jedi', 'rank', 9999)
 " }}}
 
 " gruvbox {{{
@@ -121,9 +124,9 @@
 "     nnoremap <Leader>l :Goyo <Bar> Limelight!!<CR>
 " " }}}
 
-" Echodoc {{{
-    let g:echodoc#enable_at_startup = 1
-" }}}
+" " Echodoc {{{
+"     let g:echodoc#enable_at_startup = 1
+" " }}}
 
 " Tagbar {{{
     nnoremap <F4> :Tagbar<CR>
@@ -176,9 +179,4 @@
 
 " junegunn/vim-slash {{{
     " noremap <plug>(slash-after) zz
-" }}}
-
-
-" tagbar {{{
-    nnoremap <Leader>t :Tags<CR>
 " }}}
