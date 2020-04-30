@@ -8,10 +8,10 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 " Plug 'junegunn/vim-easy-align'
 " Plug 'Chiel92/vim-autoformat'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 " Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
-" Plug 'junegunn/vim-slash'
+Plug 'junegunn/vim-slash'
 Plug 'kana/vim-textobj-indent' | Plug 'kana/vim-textobj-user'
 Plug 'mhinz/vim-startify'
 Plug 'moll/vim-bbye'
@@ -42,6 +42,7 @@ Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 " Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop'}
 " Plug 'szymonmaszke/vimpyter' "vim-plug
+" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 """"""""""""""""""""
 " Git
