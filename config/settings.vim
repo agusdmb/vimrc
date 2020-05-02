@@ -1,12 +1,8 @@
 syntax on
 
 set number
-" set relativenumber
 set cursorline
 set nowrap
-" set scrolloff=5
-" set sidescrolloff=5
-" set colorcolumn=120
 set textwidth=120
 set wildmenu
 set concealcursor=nc
@@ -28,7 +24,6 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-" set path=.
 set wildignore=*.pyc
 
 set hidden
@@ -47,10 +42,6 @@ set splitbelow
 
 set inccommand=split
 
-" Show arrow if line continues rightwards or if is wrap
-set listchars=extends:→
-" set showbreak=⤷
-
 set termguicolors
 set background=dark
 
@@ -67,8 +58,6 @@ set nojoinspaces
 set spell
 
 set virtualedit=block
-
-" set whichwrap=b,s,h,l,<,>
 
 let g:python_host_prog = '/home/agusdmb/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = '/home/agusdmb/.pyenv/versions/neovim3/bin/python'

@@ -84,7 +84,12 @@
     inoremap <expr><S-tab> pumvisible() ? "\<c-p>" : "\<S-tab>"
     let g:deoplete#sources#jedi#show_docstring = 1
     let g:deoplete#enable_ignore_case = 1
-    let g:deoplete#enable_smart_case = 1
+    " let g:deoplete#enable_smart_case = 1
+    " Pass a dictionary to set multiple options
+    " \ 'auto_complete_delay': 200,
+    call deoplete#custom#option({
+    \ 'smart_case': v:true,
+    \ })
     " call deoplete#custom#source('jedi', 'rank', 9999)
 " }}}
 
