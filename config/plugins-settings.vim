@@ -63,11 +63,11 @@
     nnoremap <Leader>f :ALEFix<CR>
 " }}}
 
-" nerdtree {{{
-    nnoremap <Leader>e :NERDTreeToggle<CR>
-    " nnoremap <Leader>f :NERDTreeFocus<CR>
-    let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-" }}}
+" " nerdtree {{{
+"     nnoremap <Leader>e :NERDTreeToggle<CR>
+"     " nnoremap <Leader>f :NERDTreeFocus<CR>
+"     let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+" " }}}
 
 " FZF {{{
     nnoremap <C-p> :FZF<CR>
@@ -90,7 +90,7 @@
     call deoplete#custom#option({
     \ 'smart_case': v:true,
     \ })
-    " call deoplete#custom#source('jedi', 'rank', 9999)
+    call deoplete#custom#source('jedi', 'rank', 9999)
 " }}}
 
 " gruvbox {{{
@@ -113,21 +113,12 @@
 "     let g:indentLine_setConceal = 0
 " " }}}
 
-" " autoformat {{{
-"     nnoremap <F3> :Autoformat<CR>
-"     vnoremap <F3> :Autoformat<CR>
-" " }}}
-
 " vim-signature"{{{
     "Support for gitgutter. When this =1 :
     "The mark is displayed over the gitgutter sign, but inherits the same colour so
     "you can tell what was there
     let g:SignatureMarkTextHLDynamic = 1
 " }}}
-
-" " Goyo & Limelight {{{
-"     nnoremap <Leader>l :Goyo <Bar> Limelight!!<CR>
-" " }}}
 
 " " Echodoc {{{
 "     let g:echodoc#enable_at_startup = 1
@@ -137,26 +128,6 @@
     nnoremap <F4> :Tagbar<CR>
 " }}}
 
-" " python-mode {{{
-"     " A lot is disabled, what I'm using:
-"     "   breakpoints, virtualenv, motions, syntax,
-"     "   indent
-"     let g:pymode_breakpoint = 1
-"     let g:pymode_breakpoint_bind = '<leader>s'
-"     let g:pymode_folding = 1
-"     let g:pymode_indent = 1
-"     let g:pymode_lint = 0
-"     let g:pymode_lint_checkers = ['flake8']
-"     let g:pymode_lint_on_write = 0
-"     let g:pymode_motion = 1
-"     let g:pymode_rope = 0
-"     let g:pymode_rope_complete_on_dot = 0
-"     let g:pymode_rope_completion = 0
-"     let g:pymode_run = 0
-"     let g:pymode_options = 0
-"     let g:pymode_options_colorcolumn = 0
-" " }}}
-
 " startify {{{
     let g:startify_change_to_dir = 0
     let g:startify_lists = [
@@ -165,14 +136,8 @@
                 \]
 " }}}
 
-" devicons nerdtree{{{
-    let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-" }}}
-
-" " clever f {{{
-"     let g:clever_f_across_no_line = 0
-"     let g:clever_f_fix_key_direction = 0
-"     let g:clever_f_timeout_ms = 3000
+" " devicons nerdtree{{{
+"     let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 " " }}}
 
 " delimitmate {{{
@@ -182,6 +147,6 @@
     let delimitMate_expand_space = 1
 " -" }}}}}}"
 
-" junegunn/vim-slash {{{
-    " noremap <plug>(slash-after) zz
+" ranger {{{
+    let g:ranger_replace_netrw = 1
 " }}}
