@@ -63,12 +63,6 @@
     nnoremap <Leader>f :ALEFix<CR>
 " }}}
 
-" " nerdtree {{{
-"     nnoremap <Leader>e :NERDTreeToggle<CR>
-"     " nnoremap <Leader>f :NERDTreeFocus<CR>
-"     let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-" " }}}
-
 " FZF {{{
     nnoremap <C-p> :FZF<CR>
     nnoremap <Leader>b :Buffers<CR>
