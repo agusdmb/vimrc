@@ -4,7 +4,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 " General
 """"""""""""""""""""
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-slash'
@@ -17,32 +17,33 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/matchit.zip'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 " Plug 'Shougo/echodoc.vim'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-""""""""""""""""""""
+"""""""""""""""""""
 " Python
-""""""""""""""""""""
+"""""""""""""""""""
 
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
+" Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+" Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
-""""""""""""""""""""
+"""""""""""""""""""
 " Git
-""""""""""""""""""""
+"""""""""""""""""""
 
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'rhysd/git-messenger.vim'
 
-""""""""""""""""""""
-" Visual
-""""""""""""""""""""
+"""""""""""""""""""
+"Visual
+"""""""""""""""""""
 
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
@@ -58,11 +59,11 @@ Plug 'majutsushi/tagbar'
 Plug 'morhetz/gruvbox'
 " Plug 'camspiers/animate.vim' | Plug 'camspiers/lens.vim'
 
-""""""""""""""""""""
-" Markdown
-""""""""""""""""""""
+"""""""""""""""""""
+"Markdown
+"""""""""""""""""""
 
-" Plug 'suan/vim-instant-markdown' " npm -g install instant-markdown-d
+Plug 'suan/vim-instant-markdown' " npm -g install instant-markdown-d
 
 
 
