@@ -89,6 +89,7 @@
 
 " gruvbox {{{
     if !exists('g:not_finish_vimplug')
+      let g:gruvbox_italic=1
       colorscheme gruvbox
     endif
 " }}}

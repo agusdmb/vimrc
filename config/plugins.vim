@@ -23,6 +23,7 @@ Plug 'wellle/targets.vim'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'honza/vim-snippets'
 
 """""""""""""""""""
 " Python
@@ -63,7 +64,7 @@ Plug 'morhetz/gruvbox'
 "Markdown
 """""""""""""""""""
 
-Plug 'suan/vim-instant-markdown' " npm -g install instant-markdown-d
+" Plug 'suan/vim-instant-markdown' " npm -g install instant-markdown-d
 
 
 
