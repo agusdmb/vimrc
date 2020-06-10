@@ -59,6 +59,7 @@ Plug 'majutsushi/tagbar'
 " Plug 'docker/docker'
 Plug 'morhetz/gruvbox'
 " Plug 'camspiers/animate.vim' | Plug 'camspiers/lens.vim'
+Plug 'unblevable/quick-scope'
 
 """""""""""""""""""
 "Markdown
