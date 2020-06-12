@@ -22,6 +22,7 @@ Plug 'wellle/targets.vim'
 " Plug 'Shougo/echodoc.vim'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
+" Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 
@@ -62,12 +63,15 @@ Plug 'morhetz/gruvbox'
 Plug 'unblevable/quick-scope'
 
 """""""""""""""""""
-"Markdown
+" Markdown
 """""""""""""""""""
 
 " Plug 'suan/vim-instant-markdown' " npm -g install instant-markdown-d
 
+"""""""""""""""""""
+" CSS
+"""""""""""""""""""
 
-
+Plug 'ap/vim-css-color'
 
 call plug#end()
