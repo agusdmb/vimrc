@@ -42,27 +42,6 @@
     let g:airline_theme='gruvbox'
 " }}}
 
-" " ale {{{
-"     "   'python': ['pylint', 'flake8', 'black', 'mypy', 'vulture'],
-"     let g:ale_linters = {
-"     \   'python': ['pylint', 'flake8', 'black', 'mypy'],
-"     \}
-"     " \   'go': ['gometalinter', 'gofmt'],
-"     " 'pydocstyle'
-"     let g:ale_fixers = {
-"     \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-"     \   'python': ['isort', 'black'],
-"     \}
-"     let g:ale_python_mypy_options='--ignore-missing-imports'
-"     let g:ale_python_pylint_options='--missing-docstring'
-"     let g:ale_python_black_options='-S -l 120'
-"     let g:ale_lint_delay = 1000
-"     " set statusline+=%{ALEGetStatusLine()}
-"     let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-"     let g:ale_python_pylint_change_directory = 0
-"     nnoremap <Leader>f :ALEFix<CR>
-" " }}}
-
 " FZF {{{
     nnoremap <C-p> :FZF<CR>
     nnoremap <Leader>b :Buffers<CR>
@@ -72,22 +51,6 @@
 
     let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 " }}}
-
-" " deoplete {{{
-"     " Use deoplete.
-"     let g:deoplete#enable_at_startup = 1
-"     inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-"     inoremap <expr><S-tab> pumvisible() ? "\<c-p>" : "\<S-tab>"
-"     let g:deoplete#sources#jedi#show_docstring = 1
-"     let g:deoplete#enable_ignore_case = 1
-"     " let g:deoplete#enable_smart_case = 1
-"     " Pass a dictionary to set multiple options
-"     " \ 'auto_complete_delay': 200,
-"     call deoplete#custom#option({
-"     \ 'smart_case': v:true,
-"     \ })
-"     call deoplete#custom#source('jedi', 'rank', 9999)
-" " }}}
 
 " gruvbox {{{
     if !exists('g:not_finish_vimplug')
@@ -117,10 +80,6 @@
     let g:SignatureMarkTextHLDynamic = 1
 " }}}
 
-" " Echodoc {{{
-"     let g:echodoc#enable_at_startup = 1
-" " }}}
-
 " Tagbar {{{
     nnoremap <F4> :Tagbar<CR>
 " }}}
@@ -132,10 +91,6 @@
                 \{ 'type': 'files',     'header': ['   MRU']            },
                 \]
 " }}}
-
-" " devicons nerdtree{{{
-"     let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-" " }}}
 
 " delimitmate {{{
 -   " Para que al apretar enter entre (|) o [|] o {|} baje el segundo y quede el cursor al medio
@@ -211,7 +166,7 @@
     " GoTo code navigation.
     nmap <silent> <leader>d <Plug>(coc-definition)
     nmap <silent> gy <Plug>(coc-type-definition)
-    nmap <silent> gi <Plug>(coc-implementation)
+    " nmap <silent> gi <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
 
     " Use K to show documentation in preview window.

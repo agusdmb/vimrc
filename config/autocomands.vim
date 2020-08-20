@@ -13,7 +13,7 @@ endif
 
 " This line is so after every save in those typefiles, whitespaces at the end
 " are trim
-autocmd BufWritePre *.{cpp,h,c,py,js,ts,css,sh,html} %s/\s\+$//e
+" autocmd BufWritePre *.{cpp,h,c,py,js,ts,css,sh,html} %s/\s\+$//e
 
 au TermOpen * setlocal nonumber norelativenumber
 
@@ -28,3 +28,4 @@ au TermOpen * setlocal nonumber norelativenumber
 
 " make :Ag to do not match files
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+autocmd FileType * set indentexpr= "some file types override it

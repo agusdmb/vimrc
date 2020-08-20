@@ -4,28 +4,26 @@ set number
 set relativenumber
 set cursorline
 set nowrap
-set textwidth=120
-set wildmenu
-set concealcursor=nc
-set conceallevel=0
+" set textwidth=120
+" set concealcursor=nc
+" set conceallevel=0
 
 " Useful when using macros, makes running them multiple times much faster
 set lazyredraw
 
-" Tab related
+" Indent related
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
+
 set breakindent
 set linebreak
 
 " Search related
-set incsearch
-set hlsearch
 set ignorecase
 set smartcase
-set wildignore=*.pyc
+set wildignore=*.pyc,**/node_modules/*
 
 set hidden
 
@@ -45,6 +43,8 @@ set inccommand=split
 
 set termguicolors
 set background=dark
+
+set scrolloff=7
 
 set mouse=a
 

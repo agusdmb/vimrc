@@ -67,5 +67,5 @@ nnoremap <C-down> :resize -1<CR>
 nnoremap <Leader>z :windo set cursorbind! \| windo set scrollbind!<CR>
 
 " Search in all args or all python files
-nnoremap <Leader>a :vim //g ##<CR>
-nnoremap <Leader>A :vim //g **/*.py<CR>
+nnoremap <Leader>a :vim /<C-R>=expand("<cword>")<CR>/g ##<CR>
+nnoremap <Leader>A :vim /<C-R>=expand("<cword>")<CR>/g **/*.py<CR>
