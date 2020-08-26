@@ -55,6 +55,8 @@
 " gruvbox {{{
     if !exists('g:not_finish_vimplug')
       let g:gruvbox_italic=1
+      let g:gruvbox_contrast_dark='hard'
+      let g:gruvbox_contrast_light='hard'
       colorscheme gruvbox
     endif
 " }}}
