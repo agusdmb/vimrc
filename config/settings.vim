@@ -44,7 +44,7 @@ set inccommand=split
 set termguicolors
 set background=dark
 
-set scrolloff=7
+set scrolloff=5
 
 set mouse=a
 
@@ -56,8 +56,8 @@ set noshowmode
 
 set nojoinspaces
 
-set spelllang=en_us,es
-set spell
+" set spelllang=en_us,es
+" set spell
 
 set virtualedit=block
 

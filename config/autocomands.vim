@@ -29,3 +29,6 @@ au TermOpen * setlocal nonumber norelativenumber
 " make :Ag to do not match files
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 autocmd FileType * set indentexpr= "some file types override it
+
+
+autocmd FileType json syntax match Comment +\/\/.\+$+
