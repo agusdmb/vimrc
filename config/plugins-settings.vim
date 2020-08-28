@@ -76,9 +76,9 @@
 
     let g:gitgutter_enabled = 1
 
-    highlight GitGutterAdd    guifg=#98c379 ctermfg=2
-    highlight GitGutterChange guifg=#eeec00 ctermfg=3
-    highlight GitGutterDelete guifg=#e06c75 ctermfg=1
+    highlight GitGutterAdd    guifg=#33ff33 ctermfg=2
+    highlight GitGutterChange guifg=#ffff33 ctermfg=3
+    highlight GitGutterDelete guifg=#ff4444 ctermfg=1
 
     let g:gitgutter_map_keys = 0
     nmap ]c <Plug>GitGutterNextHunk
