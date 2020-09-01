@@ -32,3 +32,5 @@ autocmd FileType * set indentexpr= "some file types override it
 
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
+
+command Exec set splitright | vnew | set filetype=json | read !sh #

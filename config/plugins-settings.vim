@@ -81,12 +81,12 @@
     highlight GitGutterDelete guifg=#ff4444 ctermfg=1
 
     let g:gitgutter_map_keys = 0
-    nmap ]c <Plug>GitGutterNextHunk
-    nmap [c <Plug>GitGutterPrevHunk
+    nmap ]c <Plug>(GitGutterNextHunk)
+    nmap [c <Plug>(GitGutterPrevHunk)
 " }}}
 
 " " indentline {{{
-"     let g:indentLine_setConceal = 0
+    " let g:indentLine_setConceal = 0
 " " }}}
 
 " vim-signature"{{{
@@ -138,7 +138,7 @@
     " set updatetime=300
 
     " " Don't pass messages to |ins-completion-menu|.
-    " set shortmess+=c
+    set shortmess+=c
 
     " " Always show the signcolumn, otherwise it would shift the text each time
     " " diagnostics appear/become resolved.

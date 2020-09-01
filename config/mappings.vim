@@ -5,6 +5,7 @@ nnoremap <Leader>w :update<CR>
 nnoremap <Leader>q :quit<CR>
 nnoremap <Leader>x :exit<CR>
 nnoremap <Leader>c :Bdelete<CR>
+nnoremap <Leader>C :bdelete!<CR>
 
 " Personal preferences
 nnoremap <S-q> <Nop>

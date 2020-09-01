@@ -47,13 +47,14 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'kshenoy/vim-signature'
 Plug 'machakann/vim-highlightedyank'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'yggdroot/indentline'
+" Plug 'yggdroot/indentline'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'majutsushi/tagbar'
 " Plug 'docker/docker'
 Plug 'morhetz/gruvbox'
 " Plug 'camspiers/animate.vim' | Plug 'camspiers/lens.vim'
 Plug 'unblevable/quick-scope'
+" Plug 'calebsmith/vim-lambdify'
 
 """""""""""""""""""
 " Markdown

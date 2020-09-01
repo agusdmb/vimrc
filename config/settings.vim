@@ -2,11 +2,11 @@ syntax on
 
 set number
 set relativenumber
-set cursorline
+" set cursorline
 set nowrap
 " set textwidth=120
-" set concealcursor=nc
-" set conceallevel=0
+set concealcursor=nc
+set conceallevel=0
 
 " Useful when using macros, makes running them multiple times much faster
 set lazyredraw
@@ -16,8 +16,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
+set backspace=2
 
-set breakindent
 set linebreak
 
 " Search related
