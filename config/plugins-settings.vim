@@ -43,7 +43,7 @@
 " }}}
 
 " FZF {{{
-    nnoremap <C-p> :FZF<CR>
+    nnoremap <C-p> :Files<CR>
     nnoremap <Leader>b :Buffers<CR>
     " nnoremap <Leader>a :Ag<CR>
     nnoremap <Leader>l :Lines<CR>
