@@ -51,6 +51,7 @@ tnoremap <C-j> <C-\><C-n><C-W>j
 tnoremap <C-k> <C-\><C-n><C-W>k
 tnoremap <C-h> <C-\><C-n><C-W>h
 tnoremap <C-l> <C-\><C-n><C-W>l
+tnoremap <Esc> <C-\><C-n>
 
 " Quickfix maps
 nnoremap <M-j> :cn<CR>

@@ -33,4 +33,7 @@ autocmd FileType * set indentexpr= "some file types override it
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
+" this should be Ctrl + Enter but i couldn't make it work (works with C-J)
+autocmd FileType sh nmap <buffer> <NL> :Exec<CR>
+
 command Exec set splitright | vnew | set filetype=json | read !sh #
