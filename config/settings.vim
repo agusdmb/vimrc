@@ -33,15 +33,16 @@ set undofile
 set undodir=$HOME/.config/nvim/undo
 set noswapfile
 
-set foldlevel=3
+set foldlevel=99
 
 set splitright
 set splitbelow
 
 set inccommand=split
 
-set termguicolors
+" set termguicolors
 set background=dark
+" colorscheme monokai
 
 set scrolloff=5
 

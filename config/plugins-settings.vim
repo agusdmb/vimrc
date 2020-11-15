@@ -18,7 +18,8 @@
       let g:airline#extensions#readonly#symbol   = '⊘'
       let g:airline#extensions#linecolumn#prefix = '¶'
       let g:airline#extensions#paste#symbol      = 'ρ'
-      let g:airline_symbols.linenr    = '␊'
+      let g:airline_symbols.linenr    = '☰ '
+      let g:airline_symbols.maxlinenr    = ' ln'
       let g:airline_symbols.branch    = '⎇'
       let g:airline_symbols.paste     = 'ρ'
       let g:airline_symbols.paste     = 'Þ'
@@ -278,4 +279,8 @@
 
 "  {{{ quickscope
     let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+"  }}}
+
+"  {{{ quickscope
+    let g:bclose_no_plugin_maps = 1
 "  }}}

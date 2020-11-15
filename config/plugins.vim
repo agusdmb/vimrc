@@ -27,6 +27,8 @@ Plug 'honza/vim-snippets'
 """""""""""""""""""
 
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+Plug 'tmhedberg/SimpylFold'
+" Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 """""""""""""""""""
 " Git
@@ -52,9 +54,13 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'majutsushi/tagbar'
 " Plug 'docker/docker'
 Plug 'morhetz/gruvbox'
+Plug 'sickill/vim-monokai'
+Plug 'ErichDonGubler/vim-sublime-monokai'
 " Plug 'camspiers/animate.vim' | Plug 'camspiers/lens.vim'
 Plug 'unblevable/quick-scope'
 " Plug 'calebsmith/vim-lambdify'
+" Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'sheerun/vim-polyglot'
 
 """""""""""""""""""
 " Markdown
