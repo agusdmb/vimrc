@@ -56,7 +56,7 @@
     if !exists('g:not_finish_vimplug')
       let g:gruvbox_italic=1
       let g:gruvbox_contrast_dark='normal'
-      let g:gruvbox_contrast_light='hard'
+      let g:gruvbox_contrast_light='normal'
       let g:gruvbox_sign_column='bg0'
       colorscheme gruvbox
     endif
