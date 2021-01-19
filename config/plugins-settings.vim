@@ -278,8 +278,5 @@
 
 "  {{{ quickscope
     let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-"  }}}
-
-"  {{{ quickscope
     let g:bclose_no_plugin_maps = 1
 "  }}}

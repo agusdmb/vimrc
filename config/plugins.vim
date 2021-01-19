@@ -4,9 +4,9 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 " General
 """"""""""""""""""""
 
-" Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-slash'
+" Plug 'junegunn/vim-slash'
 " Plug 'kana/vim-textobj-indent' | Plug 'kana/vim-textobj-user'
 Plug 'mhinz/vim-startify'
 Plug 'moll/vim-bbye'

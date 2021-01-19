@@ -1,4 +1,4 @@
-let mapleader = ','
+let mapleader = ' '
 
 " Regular settings
 nnoremap <Leader>w :update<CR>
