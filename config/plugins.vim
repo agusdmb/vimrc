@@ -45,7 +45,7 @@ Plug 'rhysd/git-messenger.vim'
 
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'junegunn/vim-peekaboo'
+" Plug 'junegunn/vim-peekaboo'
 Plug 'kshenoy/vim-signature'
 Plug 'machakann/vim-highlightedyank'
 Plug 'vim-airline/vim-airline-themes'
@@ -73,5 +73,14 @@ Plug 'sheerun/vim-polyglot'
 """""""""""""""""""
 
 Plug 'ap/vim-css-color'
+
+
+""""""""""""""""""""
+"" Neovim 5
+""""""""""""""""""""
+"Plug 'nvim-lua/popup.nvim'
+"Plug 'nvim-lua/plenary.nvim'
+"Plug 'nvim-telescope/telescope.nvim'
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 call plug#end()

@@ -1,5 +1,15 @@
 " vim: foldmethod=marker
 
+" gruvbox {{{
+    if !exists('g:not_finish_vimplug')
+      let g:gruvbox_italic=1
+      let g:gruvbox_contrast_dark='normal'
+      let g:gruvbox_contrast_light='normal'
+      let g:gruvbox_sign_column='bg0'
+      colorscheme gruvbox
+    endif
+" }}}
+
 " airline {{{
     set laststatus=2
     " To show the buffers open on the top status bar
@@ -52,15 +62,9 @@
     let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 " }}}
 
-" gruvbox {{{
-    if !exists('g:not_finish_vimplug')
-      let g:gruvbox_italic=1
-      let g:gruvbox_contrast_dark='normal'
-      let g:gruvbox_contrast_light='normal'
-      let g:gruvbox_sign_column='bg0'
-      colorscheme gruvbox
-    endif
-" }}}
+" " Telescope {{{
+"     nnoremap <C-p> :Telescope find_files<CR>
+" " }}}
 
 " " gundo {{{
 "     nnoremap <Leader>u :GundoToggle<CR>
@@ -280,3 +284,26 @@
     let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
     let g:bclose_no_plugin_maps = 1
 "  }}}
+
+" {{{ Tree Sitter
+" lua <<EOF
+" require'nvim-treesitter.configs'.setup {
+"   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+"   highlight = {
+"     enable = true,              -- false will disable the whole extension
+"   },
+"   indent = {
+"     enable = true
+"   },
+"   incremental_selection = {
+"     enable = true,
+"     keymaps = {
+"       init_selection = "gnn",
+"       node_incremental = "grn",
+"       scope_incremental = "grc",
+"       node_decremental = "grm",
+"     },
+"   },
+" }
+" EOF
+" }}}

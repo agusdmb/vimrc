@@ -34,6 +34,8 @@ set undodir=$HOME/.config/nvim/undo
 set noswapfile
 
 set foldlevel=99
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
 
 set splitright
 set splitbelow
