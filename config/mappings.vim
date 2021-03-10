@@ -19,10 +19,10 @@ vmap < <gv
 nnoremap ` '
 nnoremap ' `
 
-" Clipboard related
-nnoremap <Leader>p "+p
-nnoremap <Leader>y "+y
-vnoremap <Leader>y "+y
+" " Clipboard related
+" nnoremap <Leader>p "+p
+" nnoremap <Leader>y "+y
+" vnoremap <Leader>y "+y
 
 " Copy multiple time, paste once
 nnoremap <Leader>M "myy

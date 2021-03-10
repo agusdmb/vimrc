@@ -63,5 +63,7 @@ set nojoinspaces
 
 set virtualedit=block
 
+set clipboard=unnamedplus
+
 let g:python_host_prog = '/home/agusdmb/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = '/home/agusdmb/.pyenv/versions/neovim3/bin/python'
