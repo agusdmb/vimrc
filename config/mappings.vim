@@ -71,3 +71,12 @@ nnoremap <Leader>z :windo set cursorbind! \| windo set scrollbind!<CR>
 " Search in all args or all python files
 nnoremap <Leader>a :vim /<C-R>=expand("<cword>")<CR>/g ##<CR>
 nnoremap <Leader>A :vim /<C-R>=expand("<cword>")<CR>/g **/*.py<CR>
+
+" Avoid adding to jumping list
+nnoremap } :keepjumps normal! }<CR>
+nnoremap { :keepjumps normal! {<CR>
+nnoremap n :keepjumps normal! n<CR>
+nnoremap N :keepjumps normal! N<CR>
+
+" Avoid * jumping to next ocurrence
+nnoremap * m' :keepjumps normal! *N<CR>

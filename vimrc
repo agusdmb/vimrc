@@ -1,30 +1,4 @@
-if has('vim_starting')
-    set nocompatible               " Be iMproved
-endif
-
-let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
-
-let g:vim_bootstrap_langs = ""
-let g:vim_bootstrap_editor = "nvim"             " nvim or vim
-
-if !filereadable(vimplug_exists)
-    if !executable("curl")
-        echoerr "You have to install curl or first install vim-plug yourself!"
-        execute "q!"
-    endif
-    echo "Installing Vim-Plug..."
-    echo ""
-    silent !\curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    let g:not_finish_vimplug = "yes"
-
-    autocmd VimEnter * PlugInstall
-endif
-
-call plug#begin(expand('~/.config/nvim/plugged'))
-
-Plug 'morhetz/gruvbox'
-
-call plug#end()
+syntax on
 
 set number
 set cursorline
@@ -153,8 +127,8 @@ cnoremap <C-k> <Up>
 " nnoremap <M-j> :cn<CR>
 " nnoremap <M-k> :cp<CR>
 " Quickfix maps for macos
-nnoremap <M-n> :cn<CR>
-nnoremap <M-p> :cp<CR>
+nnoremap <M-j> :cn<CR>
+nnoremap <M-k> :cp<CR>
 
 " nnoremap <F5> :source ~/.config/nvim/init.vim<CR>
 
@@ -187,14 +161,3 @@ set wildignore=*.pyc
 
 " compiler pylint
 " make %
-
-" gruvbox {{{
-    if !exists('g:not_finish_vimplug')
-      let g:gruvbox_italic=1
-      let g:gruvbox_contrast_dark='normal'
-      let g:gruvbox_contrast_light='normal'
-      let g:gruvbox_sign_column='bg0'
-      colorscheme gruvbox
-    endif
-" }}}
-

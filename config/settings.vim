@@ -23,6 +23,7 @@ set linebreak
 set ignorecase
 set smartcase
 set wildignore=*.pyc,**/node_modules/*
+set path+=**
 
 set hidden
 
