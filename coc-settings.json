@@ -1,5 +1,5 @@
 {
-    "python.jediEnabled": false,
+    "python.jediEnabled": true,
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [
         "-l",

@@ -57,6 +57,8 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <M-j> :cn<CR>
 nnoremap <M-k> :cp<CR>
 
+inoremap <C-v> <Esc>pi
+
 nnoremap <F5> :source ~/.config/nvim/init.vim<CR>
 
 " Resizing
