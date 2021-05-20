@@ -38,3 +38,8 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 autocmd FileType sh nmap <buffer> <NL> :Exec<CR>
 
 command Exec set splitright | vnew | set filetype=json | read !sh #
+
+augroup Vimrc
+    autocmd FocusLost,InsertEnter,WinLeave * setl nornu
+    autocmd FocusGained,InsertLeave,WinEnter * setl rnu
+augroup END

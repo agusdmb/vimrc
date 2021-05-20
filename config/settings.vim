@@ -5,8 +5,8 @@ set relativenumber
 set cursorline
 set nowrap
 " set textwidth=120
-set concealcursor=nc
-set conceallevel=0
+" set concealcursor=nc
+" set conceallevel=0
 
 " Useful when using macros, makes running them multiple times much faster
 set lazyredraw
@@ -15,7 +15,6 @@ set lazyredraw
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set backspace=2
 set smartindent
 
 set linebreak
@@ -65,7 +64,7 @@ set nojoinspaces
 
 set virtualedit=block
 
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 let g:python_host_prog = '/home/agusdmb/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = '/home/agusdmb/.pyenv/versions/neovim3/bin/python'

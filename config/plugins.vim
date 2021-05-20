@@ -59,7 +59,6 @@ Plug 'ErichDonGubler/vim-sublime-monokai'
 " Plug 'camspiers/animate.vim' | Plug 'camspiers/lens.vim'
 Plug 'unblevable/quick-scope'
 " Plug 'calebsmith/vim-lambdify'
-" Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'sheerun/vim-polyglot'
 
 """""""""""""""""""
@@ -78,6 +77,7 @@ Plug 'ap/vim-css-color'
 """"""""""""""""""""
 "" Neovim 5
 """"""""""""""""""""
+"Plug 'nvim-treesitter/nvim-treesitter'
 "Plug 'nvim-lua/popup.nvim'
 "Plug 'nvim-lua/plenary.nvim'
 "Plug 'nvim-telescope/telescope.nvim'

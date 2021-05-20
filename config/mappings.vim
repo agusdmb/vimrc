@@ -19,10 +19,10 @@ vmap < <gv
 nnoremap ` '
 nnoremap ' `
 
-" " Clipboard related
-" nnoremap <Leader>p "+p
-" nnoremap <Leader>y "+y
-" vnoremap <Leader>y "+y
+" Clipboard related
+nnoremap <Leader>p "+p
+nnoremap <Leader>y "+y
+vnoremap <Leader>y "+y
 
 " Copy multiple time, paste once
 nnoremap <Leader>M "myy
@@ -54,8 +54,8 @@ tnoremap <C-l> <C-\><C-n><C-W>l
 tnoremap <Esc> <C-\><C-n>
 
 " Quickfix maps
-nnoremap <M-j> :cn<CR>
-nnoremap <M-k> :cp<CR>
+nnoremap <M-j> :cnext<CR>
+nnoremap <M-k> :cprevious<CR>
 
 inoremap <C-v> <Esc>pi
 
@@ -66,9 +66,6 @@ nnoremap <C-left> :vertical resize -1<CR>
 nnoremap <C-right> :vertical resize +1<CR>
 nnoremap <C-up> :resize +1<CR>
 nnoremap <C-down> :resize -1<CR>
-
-" Useful to compare files
-nnoremap <Leader>z :windo set cursorbind! \| windo set scrollbind!<CR>
 
 " Search in all args or all python files
 nnoremap <Leader>a :vim /<C-R>=expand("<cword>")<CR>/g ##<CR>
@@ -81,4 +78,4 @@ nnoremap n :keepjumps normal! n<CR>
 nnoremap N :keepjumps normal! N<CR>
 
 " Avoid * jumping to next ocurrence
-nnoremap * m' :keepjumps normal! *N<CR>
+nnoremap * :keepjumps normal! *N<CR>
