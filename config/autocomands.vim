@@ -1,7 +1,6 @@
 " Save with `:W` when sudo needed
 command! W w !sudo tee % > /dev/null
 
-autocmd WinEnter term://* startinsert
 " autocmd BufNewFile,BufRead *.{ts,js,html} set shiftwidth=2
 " autocmd BufNewFile,BufRead *.{ts,js,html} set tabstop=2
 
@@ -15,7 +14,12 @@ endif
 " are trim
 " autocmd BufWritePre *.{cpp,h,c,py,js,ts,css,sh,html} %s/\s\+$//e
 
-au TermOpen * setlocal nonumber norelativenumber
+" augroup Terminal
+"     autocmd TermOpen * setlocal nonumber norelativenumber
+"     autocmd TermEnter * setlocal nonumber norelativenumber
+"     autocmd TermLeave * setlocal nonumber norelativenumber
+"     autocmd WinEnter term://* startinsert
+" augroup END
 
 " au BufNewFile,BufRead *.py let &l:colorcolumn=join(range(89,200),",")
 " au BufNewFile,BufRead *.py setlocal textwidth=88
@@ -40,6 +44,6 @@ autocmd FileType sh nmap <buffer> <NL> :Exec<CR>
 command Exec set splitright | vnew | set filetype=json | read !sh #
 
 augroup Vimrc
-    autocmd FocusLost,InsertEnter,WinLeave * setl nornu
-    autocmd FocusGained,InsertLeave,WinEnter * setl rnu
+    autocmd FocusLost,InsertEnter,WinLeave * setl norelativenumber
+    autocmd FocusGained,InsertLeave,WinEnter * setl relativenumber
 augroup END

@@ -60,6 +60,8 @@ Plug 'ErichDonGubler/vim-sublime-monokai'
 Plug 'unblevable/quick-scope'
 " Plug 'calebsmith/vim-lambdify'
 Plug 'sheerun/vim-polyglot'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
 
 """""""""""""""""""
 " Markdown

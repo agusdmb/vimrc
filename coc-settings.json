@@ -4,7 +4,10 @@
     "diagnostic.infoSign": "",
     "diagnostic.hintSign": " ",
     "python.linting.pylintEnabled": true,
-    "python.linting.flake8Enabled": true,
-    "pyright.disableDiagnostics": true,
-    "python.formatting.provider": "black"
+    "python.linting.flake8Enabled": false,
+    "python.linting.mypyEnabled": true,
+    "python.linting.pylintArgs": ["--rcfile=pyproject.toml"],
+    "python.formatting.provider": "black",
+    "python.linting.banditEnabled": true,
+    "pyright.disableDiagnostics": false
 }
