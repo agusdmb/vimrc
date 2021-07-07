@@ -54,14 +54,20 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'majutsushi/tagbar'
 " Plug 'docker/docker'
 Plug 'morhetz/gruvbox'
-Plug 'sickill/vim-monokai'
-Plug 'ErichDonGubler/vim-sublime-monokai'
+" Plug 'sickill/vim-monokai'
+" Plug 'joshdick/onedark.vim'
 " Plug 'camspiers/animate.vim' | Plug 'camspiers/lens.vim'
 Plug 'unblevable/quick-scope'
 " Plug 'calebsmith/vim-lambdify'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
+
+" Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+" " If you want to display icons, then use one of these plugins:
+" Plug 'kyazdani42/nvim-web-devicons' " lua
+" Plug 'ryanoasis/vim-devicons' " vimscript
+
 
 """""""""""""""""""
 " Markdown
@@ -76,13 +82,13 @@ Plug 'junegunn/goyo.vim'
 Plug 'ap/vim-css-color'
 
 
-""""""""""""""""""""
-"" Neovim 5
-""""""""""""""""""""
-"Plug 'nvim-treesitter/nvim-treesitter'
-"Plug 'nvim-lua/popup.nvim'
-"Plug 'nvim-lua/plenary.nvim'
-"Plug 'nvim-telescope/telescope.nvim'
+"""""""""""""""""""""
+""" Neovim 5
+"""""""""""""""""""""
+"" Plug 'nvim-treesitter/nvim-treesitter'
+"Plug 'nvim-lua/popup.nvim' | Plug 'nvim-lua/plenary.nvim' | Plug 'nvim-telescope/telescope.nvim'
 "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+"Plug 'AckslD/nvim-anywise-reg.lua'
+"Plug 'neovim/nvim-lspconfig'
 
 call plug#end()

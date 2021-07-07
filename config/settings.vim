@@ -43,9 +43,8 @@ set splitbelow
 
 set inccommand=split
 
-" set termguicolors
+set termguicolors
 set background=dark
-" colorscheme monokai
 
 set scrolloff=5
 
