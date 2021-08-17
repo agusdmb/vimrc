@@ -53,6 +53,7 @@
 " }}}
 
 " FZF {{{
+    let $FZF_DEFAULT_COMMAND = "fdfind --type f"
     nnoremap <C-p> :Files<CR>
     nnoremap <Leader>b :Buffers<CR>
     " nnoremap <Leader>a :Ag<CR>
