@@ -68,8 +68,8 @@ nnoremap <C-up> :resize +1<CR>
 nnoremap <C-down> :resize -1<CR>
 
 " Search in all args or all python files
-nnoremap <Leader>a :vim /<C-R>=expand("<cword>")<CR>/g ##<CR>
-nnoremap <Leader>A :vim /<C-R>=expand("<cword>")<CR>/g **/*.py<CR>
+nnoremap <Leader>a :vim /\<<C-R>=expand("<cword>")<CR>\>/g ##<CR>
+nnoremap <Leader>A :vim /\<<C-R>=expand("<cword>")<CR>\>/g **/*.py<CR>
 
 " Avoid adding to jumping list
 nnoremap } :keepjumps normal! }<CR>
