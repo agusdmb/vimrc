@@ -46,7 +46,7 @@ set inccommand=split
 set termguicolors
 set background=dark
 
-set scrolloff=5
+set scrolloff=3
 
 set mouse=a
 
