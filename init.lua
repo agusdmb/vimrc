@@ -5,6 +5,7 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.termguicolors = true
 
 local keymap = vim.api.nvim_set_keymap
 
@@ -29,6 +30,12 @@ keymap('n', '<c-l>', '<c-w><c-l>', opts)
 
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    use 'morhetz/gruvbox'
-    use 'Mofiqul/dracula.nvim'
+    use {
+        'Mofiqul/dracula.nvim',
+        config = vim.cmd[[colorscheme dracula]]
+    }
+    use {
+        'morhetz/gruvbox',
+        config = vim.cmd[[colorscheme gruvbox]]
+    }
 end)
