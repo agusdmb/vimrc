@@ -10,20 +10,14 @@ vim.opt.cursorline = true
 vim.opt.wrap = false
 vim.opt.lazyredraw = true
 vim.opt.linebreak = true
-
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-
 vim.opt.scrolloff = 3
-
 vim.opt.hidden = true
 vim.opt.joinspaces = false
-
 vim.opt.undofile = true
 vim.opt.undodir = '$HOME/.config/nvim/undo'
-
 vim.opt.virtualedit = 'block'
-
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.wildignore = {'*.pyc', '**/node_modules/*'}
@@ -34,22 +28,17 @@ local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true }
 
 keymap('n', ';', ':', opts)
-
 keymap('n', '<Leader>q', ':q<CR>', opts)
 keymap('n', '<Leader>w', ':w<CR>', opts)
 keymap('n', '<Leader>x', ':x<CR>', opts)
-
 keymap('n', '<Leader>h', ':split<CR>', opts)
 keymap('n', '<Leader>v', ':vert split<CR>', opts)
-
 keymap('n', 'gb', ':bn<CR>', opts)
 keymap('n', 'gB', ':bp<CR>', opts)
-
 keymap('n', '<c-j>', '<c-w><c-j>', opts)
 keymap('n', '<c-k>', '<c-w><c-k>', opts)
 keymap('n', '<c-h>', '<c-w><c-h>', opts)
 keymap('n', '<c-l>', '<c-w><c-l>', opts)
-
 keymap('n', '<Leader>p', '"+p', opts)
 keymap('n', '<Leader>y', '"+y', opts)
 keymap('v', '<Leader>p', '"+p', opts)
@@ -57,18 +46,39 @@ keymap('v', '<Leader>y', '"+y', opts)
 
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
+    use 'mhinz/vim-startify'
+    use 'yuttie/comfortable-motion.vim'
+    use 'kdheepak/lazygit.nvim'
+    use 'bronson/vim-trailing-whitespace'
+    use 'machakann/vim-highlightedyank'
     use {
         'Mofiqul/dracula.nvim',
         config = vim.cmd[[colorscheme dracula]]
     }
     use {
-        'morhetz/gruvbox',
-        -- config = vim.cmd[[colorscheme gruvbox]]
-    }
-    use {
         'neovim/nvim-lspconfig',
         'williamboman/nvim-lsp-installer',
     }
+--    use {
+--        "hrsh7th/nvim-cmp",
+--        config = function()
+--            require("lvim.core.cmp").setup()
+--        end,
+--        requires = {
+--            use 'neovim/nvim-lspconfig'
+--            use 'hrsh7th/cmp-nvim-lsp'
+--            use 'hrsh7th/cmp-buffer'
+--            use 'hrsh7th/cmp-path'
+--            use 'hrsh7th/cmp-cmdline'
+--            use 'hrsh7th/nvim-cmp'
+--        },
+--        run = function()
+--            -- cmp's config requires cmp to be installed to run the first time
+--            if not lvim.builtin.cmp then
+--                require("lvim.core.cmp").config()
+--            end
+--        end,
+--    }
 end)
 
 local nvim_lsp = require('lspconfig')
@@ -106,14 +116,17 @@ local on_attach = function(client, bufnr)
 
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'tsserver' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
-end
+local lsp_installer = require("nvim-lsp-installer")
+
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
+
+    -- (optional) Customize the options passed to the server
+    -- if server.name == "tsserver" then
+    --     opts.root_dir = function() ... end
+    -- end
+
+    -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
+    server:setup(opts)
+    vim.cmd [[ do User LspAttachBuffers ]]
+end)
