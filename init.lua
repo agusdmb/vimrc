@@ -1,3 +1,49 @@
+vim.g.mapleader = ' '
+
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.termguicolors = true
+vim.opt.cursorline = true
+vim.opt.wrap = false
+vim.opt.lazyredraw = true
+vim.opt.linebreak = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+vim.opt.scrolloff = 3
+vim.opt.hidden = true
+vim.opt.joinspaces = false
+vim.opt.undofile = true
+vim.opt.undodir = '$HOME/.config/nvim/undo'
+vim.opt.virtualedit = 'block'
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.wildignore = {'*.pyc', '**/node_modules/*'}
+vim.opt.path = {'**/*'}
+
+local keymap = vim.api.nvim_set_keymap
+
+local opts_noremap = { noremap = true }
+
+keymap('n', ';', ':', opts_noremap)
+keymap('n', '<Leader>q', ':q<CR>', opts_noremap)
+keymap('n', '<Leader>w', ':w<CR>', opts_noremap)
+keymap('n', '<Leader>x', ':x<CR>', opts_noremap)
+keymap('n', '<Leader>h', ':split<CR>', opts_noremap)
+keymap('n', '<Leader>v', ':vert split<CR>', opts_noremap)
+keymap('n', 'gb', ':bn<CR>', opts_noremap)
+keymap('n', 'gB', ':bp<CR>', opts_noremap)
+keymap('n', '<c-j>', '<c-w><c-j>', opts_noremap)
+keymap('n', '<c-k>', '<c-w><c-k>', opts_noremap)
+keymap('n', '<c-h>', '<c-w><c-h>', opts_noremap)
+keymap('n', '<c-l>', '<c-w><c-l>', opts_noremap)
+keymap('n', '<Leader>p', '"+p', opts_noremap)
+keymap('n', '<Leader>y', '"+y', opts_noremap)
+keymap('v', '<Leader>p', '"+p', opts_noremap)
+keymap('v', '<Leader>y', '"+y', opts_noremap)
+
 -- Install packer
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 
@@ -34,11 +80,20 @@ require('packer').startup(function()
   use 'nvim-treesitter/nvim-treesitter'
   -- Additional textobjects for treesitter
   use 'nvim-treesitter/nvim-treesitter-textobjects'
-  use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
+  use {
+    'neovim/nvim-lspconfig',
+    'williamboman/nvim-lsp-installer',
+  }
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp'
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  use 'Mofiqul/dracula.nvim'
+  use 'mhinz/vim-startify'
+  use 'yuttie/comfortable-motion.vim'
+  use 'kdheepak/lazygit.nvim'
+  use 'bronson/vim-trailing-whitespace'
+  use 'machakann/vim-highlightedyank'
 end)
 
 --Incremental live completion (note: this is now a default on master)
@@ -322,3 +377,19 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-- LSP Installer
+local lsp_installer = require("nvim-lsp-installer")
+
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
+
+    -- (optional) Customize the options passed to the server
+    -- if server.name == "tsserver" then
+    --     opts.root_dir = function() ... end
+    -- end
+
+    -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
+    server:setup(opts)
+    vim.cmd [[ do User LspAttachBuffers ]]
+end)
