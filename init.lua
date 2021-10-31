@@ -8,16 +8,16 @@ end
 vim.api.nvim_exec(
   [[
   augroup Packer
-    autocmd!
-    autocmd BufWritePost init.lua PackerCompile
+  autocmd!
+  autocmd BufWritePost init.lua PackerCompile
   augroup end
-]],
+  ]],
   false
 )
 
 vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
@@ -116,12 +116,13 @@ require('packer').startup(function()
   use {
     'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer',
-    'glepnir/lspsaga.nvim',
-    'hrsh7th/cmp-nvim-lsp'
+    -- 'glepnir/lspsaga.nvim',
+    -- 'hrsh7th/cmp-nvim-lsp'
   }
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  use 'saadparwaiz1/cmp_luasnip'
-  use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  -- use "folke/lua-dev.nvim"
+  -- use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  -- use 'saadparwaiz1/cmp_luasnip'
+  -- use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use 'mhinz/vim-startify'
   use 'yuttie/comfortable-motion.vim'
   use 'kdheepak/lazygit.nvim'
@@ -132,10 +133,10 @@ end)
 vim.api.nvim_exec(
   [[
   augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
-]],
+  ]],
   false
 )
 
@@ -233,8 +234,6 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
-local nvim_lsp = require('lspconfig')
-
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -268,123 +267,44 @@ local on_attach = function(client, bufnr)
 
 end
 
-local system_name
-if vim.fn.has("mac") == 1 then
-  system_name = "macOS"
-elseif vim.fn.has("unix") == 1 then
-  system_name = "Linux"
-elseif vim.fn.has('win32') == 1 then
-  system_name = "Windows"
-else
-  print("Unsupported system for sumneko")
-end
+-- local sumneko_binary_path = vim.fn.exepath('lua-language-server')
+-- local sumneko_root_path = vim.fn.fnamemodify(sumneko_binary_path, ':h:h:h')
 
--- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
-local sumneko_root_path = "/home/agusdmb/.local/share/nvim/lsp_servers/sumneko_lua/extension/server"
-local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
+-- local runtime_path = vim.split(package.path, ';')
+-- table.insert(runtime_path, "lua/?.lua")
+-- table.insert(runtime_path, "lua/?/init.lua")
 
-local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
-
-require'lspconfig'.sumneko_lua.setup {
-  on_attach = on_attach,
-  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-        -- Setup your lua path
-        path = runtime_path,
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
-}
-
--- -- nvim-cmp supports additional completion capabilities
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
-
--- luasnip setup
-local luasnip = require 'luasnip'
-
--- nvim-cmp setup
-local cmp = require 'cmp'
-
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = {
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end,
-    ['<S-Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end,
-  },
-  sources = {
-    { name = 'path' },
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
-}
-
--- LSP Installer
 local lsp_installer = require("nvim-lsp-installer")
 
 lsp_installer.on_server_ready(function(server)
-    local opts = {}
-
-   -- (optional) Customize the options passed to the server
-   -- if server.name == "tsserver" then
-   --     opts.root_dir = function() ... end
-   -- end
-
-    -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
-    server:setup(opts)
-    vim.cmd [[ do User LspAttachBuffers ]]
+  local opts = {on_attach=on_attach}
+  -- (optional) Customize the options passed to the server
+  if server.name == "sumneko_lua" then
+    -- opts.cmd = {sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua"};
+    opts.settings = {
+      Lua = {
+        runtime = {
+          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+          version = 'LuaJIT',
+          -- Setup your lua path
+          -- path = runtime_path,
+        },
+        diagnostics = {
+          -- Get the language server to recognize the `vim` global
+          globals = {'vim'},
+        },
+        workspace = {
+          -- Make the server aware of Neovim runtime files
+          library = vim.api.nvim_get_runtime_file("", true),
+        },
+        -- Do not send telemetry data containing a randomized but unique identifier
+        telemetry = {
+          enable = false,
+        }
+      }
+    }
+  end
+  -- This setup() function is exactly the same as lspconfig's setup function.
+  -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/ADVANCED_README.md
+  server:setup(opts)
 end)
-
-local saga = require 'lspsaga'
-saga.init_lsp_saga()
