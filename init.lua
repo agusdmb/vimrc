@@ -97,10 +97,10 @@ keymap('v', '<Leader>y', '"+y', opts_noremap)
 local use = require('packer').use
 require('packer').startup(function()
   use 'wbthomason/packer.nvim' -- Package manager
-  -- use 'tpope/vim-fugitive' -- Git commands in nvim
-  -- use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
+  use 'tpope/vim-fugitive' -- Git commands in nvim
+  use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
   use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
-  -- use 'ludovicchabant/vim-gutentags' -- Automatic tags management
+  use 'ludovicchabant/vim-gutentags' -- Automatic tags management
   -- UI to select things (files, grep results, open buffers...)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use 'joshdick/onedark.vim' -- Theme inspired by Atom
@@ -108,7 +108,7 @@ require('packer').startup(function()
   -- Add indentation guides even on blank lines
   -- use 'lukas-reineke/indent-blankline.nvim'
   -- Add git related info in the signs columns and popups
-  -- use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   -- Highlight, edit, and navigate code using a fast incremental parsing library
   use 'nvim-treesitter/nvim-treesitter'
   -- Additional textobjects for treesitter
@@ -116,13 +116,13 @@ require('packer').startup(function()
   use {
     'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer',
-    -- 'glepnir/lspsaga.nvim',
-    -- 'hrsh7th/cmp-nvim-lsp'
+    'glepnir/lspsaga.nvim',
+    'hrsh7th/cmp-nvim-lsp'
   }
-  -- use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  -- use 'saadparwaiz1/cmp_luasnip'
-  -- use 'L3MON4D3/LuaSnip' -- Snippets plugin
-  -- use 'mhinz/vim-startify'
+  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  use 'mhinz/vim-startify'
   use 'yuttie/comfortable-motion.vim'
   use 'kdheepak/lazygit.nvim'
   use 'bronson/vim-trailing-whitespace'
@@ -146,16 +146,16 @@ vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
 vim.g.indent_blankline_char_highlight = 'LineNr'
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 
--- -- Gitsigns
--- require('gitsigns').setup {
---   signs = {
---     add = { hl = 'GitGutterAdd', text = '+' },
---     change = { hl = 'GitGutterChange', text = '~' },
---     delete = { hl = 'GitGutterDelete', text = '_' },
---     topdelete = { hl = 'GitGutterDelete', text = '‾' },
---     changedelete = { hl = 'GitGutterChange', text = '~' },
---   },
--- }
+-- Gitsigns
+require('gitsigns').setup {
+  signs = {
+    add = { hl = 'GitGutterAdd', text = '+' },
+    change = { hl = 'GitGutterChange', text = '~' },
+    delete = { hl = 'GitGutterDelete', text = '_' },
+    topdelete = { hl = 'GitGutterDelete', text = '‾' },
+    changedelete = { hl = 'GitGutterChange', text = '~' },
+  },
+}
 
 -- Telescope
 require('telescope').setup {
@@ -268,17 +268,51 @@ local on_attach = function(client, bufnr)
 
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'pyright' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
+local system_name
+if vim.fn.has("mac") == 1 then
+  system_name = "macOS"
+elseif vim.fn.has("unix") == 1 then
+  system_name = "Linux"
+elseif vim.fn.has('win32') == 1 then
+  system_name = "Windows"
+else
+  print("Unsupported system for sumneko")
 end
+
+-- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
+local sumneko_root_path = "/home/agusdmb/.local/share/nvim/lsp_servers/sumneko_lua/extension/server"
+local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
+
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
+
+require'lspconfig'.sumneko_lua.setup {
+  on_attach = on_attach,
+  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+        -- Setup your lua path
+        path = runtime_path,
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
 
 -- -- nvim-cmp supports additional completion capabilities
 -- local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -287,54 +321,54 @@ end
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- -- luasnip setup
--- local luasnip = require 'luasnip'
+-- luasnip setup
+local luasnip = require 'luasnip'
 
--- -- nvim-cmp setup
--- local cmp = require 'cmp'
+-- nvim-cmp setup
+local cmp = require 'cmp'
 
--- cmp.setup {
---   snippet = {
---     expand = function(args)
---       luasnip.lsp_expand(args.body)
---     end,
---   },
---   mapping = {
---     ['<C-p>'] = cmp.mapping.select_prev_item(),
---     ['<C-n>'] = cmp.mapping.select_next_item(),
---     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
---     ['<C-f>'] = cmp.mapping.scroll_docs(4),
---     ['<C-Space>'] = cmp.mapping.complete(),
---     ['<C-e>'] = cmp.mapping.close(),
---     ['<CR>'] = cmp.mapping.confirm {
---       behavior = cmp.ConfirmBehavior.Replace,
---       select = true,
---     },
---     ['<Tab>'] = function(fallback)
---       if cmp.visible() then
---         cmp.select_next_item()
---       elseif luasnip.expand_or_jumpable() then
---         luasnip.expand_or_jump()
---       else
---         fallback()
---       end
---     end,
---     ['<S-Tab>'] = function(fallback)
---       if cmp.visible() then
---         cmp.select_prev_item()
---       elseif luasnip.jumpable(-1) then
---         luasnip.jump(-1)
---       else
---         fallback()
---       end
---     end,
---   },
---   sources = {
---     { name = 'path' },
---     { name = 'nvim_lsp' },
---     { name = 'luasnip' },
---   },
--- }
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  mapping = {
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end,
+    ['<S-Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end,
+  },
+  sources = {
+    { name = 'path' },
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+  },
+}
 
 -- LSP Installer
 local lsp_installer = require("nvim-lsp-installer")
@@ -342,15 +376,15 @@ local lsp_installer = require("nvim-lsp-installer")
 lsp_installer.on_server_ready(function(server)
     local opts = {}
 
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
-    -- end
+   -- (optional) Customize the options passed to the server
+   -- if server.name == "tsserver" then
+   --     opts.root_dir = function() ... end
+   -- end
 
     -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
     server:setup(opts)
     vim.cmd [[ do User LspAttachBuffers ]]
 end)
 
--- local saga = require 'lspsaga'
--- saga.init_lsp_saga()
+local saga = require 'lspsaga'
+saga.init_lsp_saga()
