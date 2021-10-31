@@ -15,8 +15,6 @@ vim.api.nvim_exec(
   false
 )
 
-vim.g.mapleader = ' '
-
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
@@ -40,9 +38,44 @@ vim.opt.smartcase = true
 vim.opt.wildignore = {'*.pyc', '**/node_modules/*'}
 vim.opt.path = {'**/*'}
 
+--Incremental live completion (note: this is now a default on master)
+vim.o.inccommand = 'nosplit'
+--Make line numbers default
+vim.wo.number = true
+vim.wo.relativenumber = true
+--Do not save when switching buffers (note: this is now a default on master)
+vim.o.hidden = true
+--Enable mouse mode
+vim.o.mouse = 'a'
+--Enable break indent
+vim.o.breakindent = true
+--Save undo history
+vim.opt.undofile = true
+--Case insensitive searching UNLESS /C or capital in search
+vim.o.ignorecase = true
+vim.o.smartcase = true
+--Decrease update time
+vim.o.updatetime = 250
+vim.wo.signcolumn = 'yes'
+--Set colorscheme (order is important here)
+vim.o.termguicolors = true
+vim.g.onedark_terminal_italics = 2
+vim.cmd [[colorscheme onedark]]
+--Set statusbar
+vim.g.lightline = {
+  colorscheme = 'onedark',
+  active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
+  component_function = { gitbranch = 'fugitive#head' },
+}
+
 local keymap = vim.api.nvim_set_keymap
 
 local opts_noremap = { noremap = true, silent = true }
+
+--Remap space as leader key
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', opts_noremap)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 keymap('n', ';', ':', opts_noremap)
 keymap('n', '<Leader>q', ':q<CR>', opts_noremap)
@@ -83,18 +116,18 @@ keymap('n', '<leader>so', [[<cmd>lua require('telescope.builtin').lsp_document_s
 local use = require('packer').use
 require('packer').startup(function()
   use 'wbthomason/packer.nvim' -- Package manager
-  use 'tpope/vim-fugitive' -- Git commands in nvim
-  use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
+  -- use 'tpope/vim-fugitive' -- Git commands in nvim
+  -- use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
   use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
-  use 'ludovicchabant/vim-gutentags' -- Automatic tags management
+  -- use 'ludovicchabant/vim-gutentags' -- Automatic tags management
   -- UI to select things (files, grep results, open buffers...)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use 'joshdick/onedark.vim' -- Theme inspired by Atom
   use 'itchyny/lightline.vim' -- Fancier statusline
   -- Add indentation guides even on blank lines
-  use 'lukas-reineke/indent-blankline.nvim'
+  -- use 'lukas-reineke/indent-blankline.nvim'
   -- Add git related info in the signs columns and popups
-  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  -- use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   -- Highlight, edit, and navigate code using a fast incremental parsing library
   use 'nvim-treesitter/nvim-treesitter'
   -- Additional textobjects for treesitter
@@ -103,64 +136,16 @@ require('packer').startup(function()
     'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer',
     -- 'glepnir/lspsaga.nvim',
-    'hrsh7th/cmp-nvim-lsp'
+    -- 'hrsh7th/cmp-nvim-lsp'
   }
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  use 'saadparwaiz1/cmp_luasnip'
-  use 'L3MON4D3/LuaSnip' -- Snippets plugin
-  use {
-    'Mofiqul/dracula.nvim',
-    -- config = 'vim.cmd[[colorscheme dracula]]'
-  }
-  use 'mhinz/vim-startify'
+  -- use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  -- use 'saadparwaiz1/cmp_luasnip'
+  -- use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  -- use 'mhinz/vim-startify'
   use 'yuttie/comfortable-motion.vim'
   use 'kdheepak/lazygit.nvim'
   use 'bronson/vim-trailing-whitespace'
 end)
-
---Incremental live completion (note: this is now a default on master)
-vim.o.inccommand = 'nosplit'
-
---Make line numbers default
-vim.wo.number = true
-vim.wo.relativenumber = true
-
---Do not save when switching buffers (note: this is now a default on master)
-vim.o.hidden = true
-
---Enable mouse mode
-vim.o.mouse = 'a'
-
---Enable break indent
-vim.o.breakindent = true
-
---Save undo history
-vim.opt.undofile = true
-
---Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
---Decrease update time
-vim.o.updatetime = 250
-vim.wo.signcolumn = 'yes'
-
---Set colorscheme (order is important here)
-vim.o.termguicolors = true
-vim.g.onedark_terminal_italics = 2
-vim.cmd [[colorscheme onedark]]
-
---Set statusbar
-vim.g.lightline = {
-  colorscheme = 'onedark',
-  active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
-  component_function = { gitbranch = 'fugitive#head' },
-}
-
---Remap space as leader key
-vim.api.nvim_set_keymap('', '<Space>', '<Nop>', opts_noremap)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
 
 -- Highlight on yank
 vim.api.nvim_exec(
@@ -180,16 +165,16 @@ vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
 vim.g.indent_blankline_char_highlight = 'LineNr'
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 
--- Gitsigns
-require('gitsigns').setup {
-  signs = {
-    add = { hl = 'GitGutterAdd', text = '+' },
-    change = { hl = 'GitGutterChange', text = '~' },
-    delete = { hl = 'GitGutterDelete', text = '_' },
-    topdelete = { hl = 'GitGutterDelete', text = '‾' },
-    changedelete = { hl = 'GitGutterChange', text = '~' },
-  },
-}
+-- -- Gitsigns
+-- require('gitsigns').setup {
+--   signs = {
+--     add = { hl = 'GitGutterAdd', text = '+' },
+--     change = { hl = 'GitGutterChange', text = '~' },
+--     delete = { hl = 'GitGutterDelete', text = '_' },
+--     topdelete = { hl = 'GitGutterDelete', text = '‾' },
+--     changedelete = { hl = 'GitGutterChange', text = '~' },
+--   },
+-- }
 
 -- Telescope
 require('telescope').setup {
@@ -202,6 +187,7 @@ require('telescope').setup {
     },
   },
 }
+
 --Add leader shortcuts
 keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], opts_noremap)
 keymap('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], opts_noremap)
@@ -266,61 +252,61 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
--- nvim-cmp supports additional completion capabilities
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+-- -- nvim-cmp supports additional completion capabilities
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- luasnip setup
-local luasnip = require 'luasnip'
+-- -- luasnip setup
+-- local luasnip = require 'luasnip'
 
--- nvim-cmp setup
-local cmp = require 'cmp'
+-- -- nvim-cmp setup
+-- local cmp = require 'cmp'
 
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = {
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end,
-    ['<S-Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end,
-  },
-  sources = {
-    { name = 'path' },
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
-}
+-- cmp.setup {
+--   snippet = {
+--     expand = function(args)
+--       luasnip.lsp_expand(args.body)
+--     end,
+--   },
+--   mapping = {
+--     ['<C-p>'] = cmp.mapping.select_prev_item(),
+--     ['<C-n>'] = cmp.mapping.select_next_item(),
+--     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+--     ['<C-f>'] = cmp.mapping.scroll_docs(4),
+--     ['<C-Space>'] = cmp.mapping.complete(),
+--     ['<C-e>'] = cmp.mapping.close(),
+--     ['<CR>'] = cmp.mapping.confirm {
+--       behavior = cmp.ConfirmBehavior.Replace,
+--       select = true,
+--     },
+--     ['<Tab>'] = function(fallback)
+--       if cmp.visible() then
+--         cmp.select_next_item()
+--       elseif luasnip.expand_or_jumpable() then
+--         luasnip.expand_or_jump()
+--       else
+--         fallback()
+--       end
+--     end,
+--     ['<S-Tab>'] = function(fallback)
+--       if cmp.visible() then
+--         cmp.select_prev_item()
+--       elseif luasnip.jumpable(-1) then
+--         luasnip.jump(-1)
+--       else
+--         fallback()
+--       end
+--     end,
+--   },
+--   sources = {
+--     { name = 'path' },
+--     { name = 'nvim_lsp' },
+--     { name = 'luasnip' },
+--   },
+-- }
 
 -- LSP Installer
 local lsp_installer = require("nvim-lsp-installer")
