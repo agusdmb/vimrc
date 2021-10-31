@@ -1,3 +1,20 @@
+-- Install packer
+local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+end
+
+vim.api.nvim_exec(
+  [[
+  augroup Packer
+    autocmd!
+    autocmd BufWritePost init.lua PackerCompile
+  augroup end
+]],
+  false
+)
+
 vim.g.mapleader = ' '
 
 vim.opt.expandtab = true
@@ -25,7 +42,7 @@ vim.opt.path = {'**/*'}
 
 local keymap = vim.api.nvim_set_keymap
 
-local opts_noremap = { noremap = true }
+local opts_noremap = { noremap = true, silent = true }
 
 keymap('n', ';', ':', opts_noremap)
 keymap('n', '<Leader>q', ':q<CR>', opts_noremap)
@@ -43,23 +60,28 @@ keymap('n', '<Leader>p', '"+p', opts_noremap)
 keymap('n', '<Leader>y', '"+y', opts_noremap)
 keymap('v', '<Leader>p', '"+p', opts_noremap)
 keymap('v', '<Leader>y', '"+y', opts_noremap)
+keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts_noremap)
 
--- Install packer
-local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+-- keymap('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
-end
-
-vim.api.nvim_exec(
-  [[
-  augroup Packer
-    autocmd!
-    autocmd BufWritePost init.lua PackerCompile
-  augroup end
-]],
-  false
-)
+keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts_noremap)
+keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts_noremap)
+keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts_noremap)
+keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts_noremap)
+keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts_noremap)
+keymap('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts_noremap)
+keymap('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts_noremap)
+keymap('n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts_noremap)
+keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts_noremap)
+keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts_noremap)
+keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts_noremap)
+keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts_noremap)
+keymap('v', '<leader>ca', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', opts_noremap)
+keymap('n', '<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts_noremap)
+keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts_noremap)
+keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts_noremap)
+keymap('n', '<leader>l', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts_noremap)
+keymap('n', '<leader>so', [[<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>]], opts_noremap)
 
 local use = require('packer').use
 require('packer').startup(function()
@@ -139,13 +161,9 @@ vim.g.lightline = {
 }
 
 --Remap space as leader key
-vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', opts_noremap)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
---Remap for dealing with word wrap
-vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
-vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
 
 -- Highlight on yank
 vim.api.nvim_exec(
@@ -157,9 +175,6 @@ vim.api.nvim_exec(
 ]],
   false
 )
-
--- Y yank until the end of line  (note: this is now a default on master)
-vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
 
 --Map blankline
 vim.g.indent_blankline_char = '┊'
@@ -191,15 +206,15 @@ require('telescope').setup {
   },
 }
 --Add leader shortcuts
-vim.api.nvim_set_keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>sb', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>sh', [[<cmd>lua require('telescope.builtin').help_tags()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>st', [[<cmd>lua require('telescope.builtin').tags()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>sd', [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>sp', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>so', [[<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { noremap = true, silent = true })
+keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], opts_noremap)
+keymap('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], opts_noremap)
+keymap('n', '<leader>sb', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], opts_noremap)
+keymap('n', '<leader>sh', [[<cmd>lua require('telescope.builtin').help_tags()<CR>]], opts_noremap)
+keymap('n', '<leader>st', [[<cmd>lua require('telescope.builtin').tags()<CR>]], opts_noremap)
+keymap('n', '<leader>sd', [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], opts_noremap)
+keymap('n', '<leader>sp', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], opts_noremap)
+keymap('n', '<leader>so', [[<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR>]], opts_noremap)
+keymap('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], opts_noremap)
 
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
@@ -330,6 +345,7 @@ cmp.setup {
     end,
   },
   sources = {
+    { name = 'path' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   },
