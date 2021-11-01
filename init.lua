@@ -1,111 +1,17 @@
--- Install packer
-local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+require('plugin_manager')
+require('settings')
+require('mappings')
 
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
-end
-
-vim.api.nvim_exec(
-  [[
-  augroup Packer
-  autocmd!
-  autocmd BufWritePost init.lua PackerCompile
-  augroup end
-  ]],
-  false
-)
-
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.termguicolors = true
-vim.opt.cursorline = true
-vim.opt.wrap = false
-vim.opt.lazyredraw = true
-vim.opt.linebreak = true
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-vim.opt.scrolloff = 3
-vim.opt.hidden = true
-vim.opt.joinspaces = false
-vim.opt.undofile = true
-vim.opt.undodir = '/home/agusdmb/.config/nvim/undo'
-vim.opt.virtualedit = 'block'
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.wildignore = {'*.pyc', '**/node_modules/*'}
-vim.opt.path = {'**/*'}
-
---Incremental live completion (note: this is now a default on master)
-vim.o.inccommand = 'nosplit'
---Make line numbers default
-vim.wo.number = true
-vim.wo.relativenumber = true
---Do not save when switching buffers (note: this is now a default on master)
-vim.o.hidden = true
---Enable mouse mode
-vim.o.mouse = 'a'
---Enable break indent
-vim.o.breakindent = true
---Save undo history
-vim.opt.undofile = true
---Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
---Decrease update time
-vim.o.updatetime = 250
-vim.wo.signcolumn = 'yes'
 --Set colorscheme (order is important here)
-vim.o.termguicolors = true
 vim.g.onedark_terminal_italics = 2
 vim.cmd [[colorscheme onedark]]
+
 --Set statusbar
 vim.g.lightline = {
   colorscheme = 'onedark',
   active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
   component_function = { gitbranch = 'fugitive#head' },
 }
-
-require('mappings')
-
-local use = require('packer').use
-require('packer').startup(function()
-  use 'wbthomason/packer.nvim' -- Package manager
-  use 'tpope/vim-fugitive' -- Git commands in nvim
-  use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
-  use 'tpope/vim-commentary' -- "gc" to comment visual regions/lines
-  use 'ludovicchabant/vim-gutentags' -- Automatic tags management
-  -- UI to select things (files, grep results, open buffers...)
-  use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-  use 'joshdick/onedark.vim' -- Theme inspired by Atom
-  use 'itchyny/lightline.vim' -- Fancier statusline
-  -- Add indentation guides even on blank lines
-  -- use 'lukas-reineke/indent-blankline.nvim'
-  -- Add git related info in the signs columns and popups
-  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-  -- Highlight, edit, and navigate code using a fast incremental parsing library
-  use 'nvim-treesitter/nvim-treesitter'
-  -- Additional textobjects for treesitter
-  use 'nvim-treesitter/nvim-treesitter-textobjects'
-  use {
-    'neovim/nvim-lspconfig',
-    'williamboman/nvim-lsp-installer',
-    -- 'glepnir/lspsaga.nvim',
-  }
-  -- use "folke/lua-dev.nvim"
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'saadparwaiz1/cmp_luasnip'
-  use 'L3MON4D3/LuaSnip' -- Snippets plugin
-  use 'mhinz/vim-startify'
-  use 'yuttie/comfortable-motion.vim'
-  use 'kdheepak/lazygit.nvim'
-  use 'bronson/vim-trailing-whitespace'
-  -- use 'mfussenegger/nvim-lint'
-  -- use 'jose-elias-alvarez/null-ls.nvim'
-end)
 
 -- Highlight on yank
 vim.api.nvim_exec(
@@ -147,6 +53,10 @@ require('telescope').setup {
     },
   },
 }
+
+local keymap = vim.api.nvim_set_keymap
+
+local opts_noremap = { noremap = true, silent = true }
 
 --Add leader shortcuts
 keymap('n', '<leader><space>', [[<cmd>lua require('telescope.builtin').buffers()<CR>]], opts_noremap)
@@ -214,7 +124,7 @@ require('nvim-treesitter.configs').setup {
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -266,15 +176,15 @@ lsp_installer.on_server_ready(function(server)
   --     }
   --   }
   -- end
-  if server.name == "pyright" then
-    opts.settings = {
-      python = {
-        analysis = {
-          typeCheckingMode = "off"
-        }
-      }
-    }
-  end
+  -- if server.name == "pyright" then
+  --   opts.settings = {
+  --     python = {
+  --       analysis = {
+  --         typeCheckingMode = "off"
+  --       }
+  --     }
+  --   }
+  -- end
   if server.name == "sumneko_lua" then
     -- opts.cmd = {sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua"};
     opts.settings = {
@@ -304,71 +214,6 @@ lsp_installer.on_server_ready(function(server)
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/ADVANCED_README.md
   server:setup(opts)
 end)
-
--- require('lint').linters_by_ft = {
---   python = {'pylint',}
--- }
-
--- vim.api.nvim_exec(
---   [[
---   au BufWritePost <buffer> lua require('lint').try_lint()
---   ]],
---   false
--- )
-
--- Setup nvim-cmp.
-local cmp = require'cmp'
-
-cmp.setup({
-  snippet = {
-    -- REQUIRED - you must specify a snippet engine
-    expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-      -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-      -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
-    end,
-  },
-  mapping = {
-    ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    ['<C-y>'] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
-    ['<C-e>'] = cmp.mapping({
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    }),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-  },
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    -- { name = 'vsnip' }, -- For vsnip users.
-    { name = 'luasnip' }, -- For luasnip users.
-    -- { name = 'ultisnips' }, -- For ultisnips users.
-    -- { name = 'snippy' }, -- For snippy users.
-  }, {
-    { name = 'buffer' },
-  })
-})
-
--- Use buffer source for `/`.
-cmp.setup.cmdline('/', {
-  sources = {
-    { name = 'buffer' }
-  }
-})
-
--- Use cmdline & path source for ':'.
-cmp.setup.cmdline(':', {
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
-})
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 vim.cmd[[
     let g:startify_change_to_dir = 0
