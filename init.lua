@@ -117,16 +117,17 @@ require('packer').startup(function()
     'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer',
     -- 'glepnir/lspsaga.nvim',
-    -- 'hrsh7th/cmp-nvim-lsp'
   }
   -- use "folke/lua-dev.nvim"
-  -- use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  -- use 'saadparwaiz1/cmp_luasnip'
+  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'saadparwaiz1/cmp_luasnip'
   -- use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use 'mhinz/vim-startify'
   use 'yuttie/comfortable-motion.vim'
   use 'kdheepak/lazygit.nvim'
   use 'bronson/vim-trailing-whitespace'
+  -- use 'mfussenegger/nvim-lint'
 end)
 
 -- Highlight on yank
@@ -279,6 +280,15 @@ local lsp_installer = require("nvim-lsp-installer")
 lsp_installer.on_server_ready(function(server)
   local opts = {on_attach=on_attach}
   -- (optional) Customize the options passed to the server
+  if server.name == "pyright" then
+    opts.settings = {
+      python = {
+        analysis = {
+          typeCheckingMode = "off"
+        }
+      }
+    }
+  end
   if server.name == "sumneko_lua" then
     -- opts.cmd = {sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua"};
     opts.settings = {
@@ -308,3 +318,68 @@ lsp_installer.on_server_ready(function(server)
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/ADVANCED_README.md
   server:setup(opts)
 end)
+
+-- require('lint').linters_by_ft = {
+--   python = {'pylint',}
+-- }
+
+-- vim.api.nvim_exec(
+--   [[
+--   au BufWritePost <buffer> python require('lint').try_lint()
+--   ]],
+--   false
+-- )
+
+-- Setup nvim-cmp.
+local cmp = require'cmp'
+
+cmp.setup({
+  snippet = {
+    -- REQUIRED - you must specify a snippet engine
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+    end,
+  },
+  mapping = {
+    ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<C-y>'] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
+    ['<C-e>'] = cmp.mapping({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close(),
+    }),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  },
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    -- { name = 'vsnip' }, -- For vsnip users.
+    { name = 'luasnip' }, -- For luasnip users.
+    -- { name = 'ultisnips' }, -- For ultisnips users.
+    -- { name = 'snippy' }, -- For snippy users.
+  }, {
+    { name = 'buffer' },
+  })
+})
+
+-- Use buffer source for `/`.
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+-- Use cmdline & path source for ':'.
+cmp.setup.cmdline(':', {
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
