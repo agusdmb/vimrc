@@ -1,6 +1,6 @@
 colorscheme peachpuff
 
-let mapleader = ','
+let mapleader = ' '
 
 nnoremap ; :
 vnoremap ; :
@@ -14,6 +14,8 @@ nnoremap gB :bprev<cr>
 
 nnoremap <leader>h :split<cr>
 nnoremap <leader>v :vertical split<cr>
+set splitright
+set splitbelow
 
 nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
@@ -27,7 +29,7 @@ set cursorline
 
 set path=**
 
-set scrolloff=7
+set scrolloff=3
 
 set completeopt=menu,preview,menuone
 set complete=.,w,b,u,U,i,d,t,k
@@ -44,7 +46,3 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 20
 
 nnoremap <leader>e :Vexplore<cr>
-
-" Only usefull with my pyenv configuration
-let g:python_host_prog = '/Users/agmarquez/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/Users/agmarquez/.pyenv/versions/neovim3/bin/python'
