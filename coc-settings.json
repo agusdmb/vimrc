@@ -9,5 +9,5 @@
     "python.linting.pylintArgs": ["--rcfile=pyproject.toml"],
     "python.formatting.provider": "black",
     "python.linting.banditEnabled": true,
-    "pyright.disableDiagnostics": false
+    "pyright.disableDiagnostics": true
 }
