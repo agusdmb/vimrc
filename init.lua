@@ -383,3 +383,9 @@ cmp.setup.cmdline(':', {
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+-- vim.g.startify_change_to_dir = 0
+-- vim.g.startify_lists = {
+--     { 'type'= 'dir',       'header'= '   MRU '. getcwd() },
+--     { 'type'= 'files',     'header'= {'   MRU'}            },
+--     }
