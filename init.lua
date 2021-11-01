@@ -122,12 +122,13 @@ require('packer').startup(function()
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp'
   use 'saadparwaiz1/cmp_luasnip'
-  -- use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use 'mhinz/vim-startify'
   use 'yuttie/comfortable-motion.vim'
   use 'kdheepak/lazygit.nvim'
   use 'bronson/vim-trailing-whitespace'
   -- use 'mfussenegger/nvim-lint'
+  -- use 'jose-elias-alvarez/null-ls.nvim'
 end)
 
 -- Highlight on yank
@@ -280,6 +281,15 @@ local lsp_installer = require("nvim-lsp-installer")
 lsp_installer.on_server_ready(function(server)
   local opts = {on_attach=on_attach}
   -- (optional) Customize the options passed to the server
+  -- if server.name == "pylsp" then
+  --   opts.settings = {
+  --     pylsp = {
+  --       plugins = {
+  --         pylint = {enabled = true}
+  --       }
+  --     }
+  --   }
+  -- end
   if server.name == "pyright" then
     opts.settings = {
       python = {
@@ -325,7 +335,7 @@ end)
 
 -- vim.api.nvim_exec(
 --   [[
---   au BufWritePost <buffer> python require('lint').try_lint()
+--   au BufWritePost <buffer> lua require('lint').try_lint()
 --   ]],
 --   false
 -- )
