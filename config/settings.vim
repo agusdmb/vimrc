@@ -52,7 +52,7 @@ set mouse=a
 
 set diffopt+=vertical
 
-set updatetime=100
+" set updatetime=100
 
 set noshowmode
 
