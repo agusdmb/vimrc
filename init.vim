@@ -2,6 +2,26 @@ colorscheme peachpuff
 
 let mapleader = ' '
 
+set number
+set relativenumber
+
+set cursorline
+
+set path=**/*
+
+set scrolloff=3
+
+set completeopt=menu,preview,menuone
+set complete=.,w,b,u,U,i,d,t,k
+
+set ignorecase
+set smartcase
+
+set hidden
+
+set splitright
+set splitbelow
+
 nnoremap ; :
 vnoremap ; :
 
@@ -14,30 +34,22 @@ nnoremap gB :bprev<cr>
 
 nnoremap <leader>h :split<cr>
 nnoremap <leader>v :vertical split<cr>
-set splitright
-set splitbelow
 
 nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 nnoremap <c-l> <c-w><c-l>
 nnoremap <c-h> <c-w><c-h>
 
-set number
-set relativenumber
+nnoremap <c-left> :vert resize -10<cr>
+nnoremap <c-right> :vert resize +10<cr>
+nnoremap <c-down> :vert resize -10<cr>
+nnoremap <c-up> :vert resize +10<cr>
 
-set cursorline
+nnoremap <F5> :source $MYVIMRC<cr>
 
-set path=**
-
-set scrolloff=3
-
-set completeopt=menu,preview,menuone
-set complete=.,w,b,u,U,i,d,t,k
-
-set ignorecase
-set smartcase
-
-set hidden
+for c in ['"', '[', "'", ']', '(', ')']
+  execute 'nnoremap <leader>'.c 'viw<esc>a'.c.'<esc>bi'.c.'<esc>'
+endfor
 
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
