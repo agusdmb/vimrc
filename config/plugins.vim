@@ -92,4 +92,6 @@ Plug 'ap/vim-css-color'
 "Plug 'AckslD/nvim-anywise-reg.lua'
 "Plug 'neovim/nvim-lspconfig'
 
+Plug 'github/copilot.vim'
+
 call plug#end()
