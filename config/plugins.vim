@@ -75,6 +75,7 @@ Plug 'junegunn/goyo.vim'
 """""""""""""""""""
 
 " Plug 'suan/vim-instant-markdown' " npm -g install instant-markdown-d
+Plug 'junegunn/vim-easy-align'
 
 """""""""""""""""""
 " CSS

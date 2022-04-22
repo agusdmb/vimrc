@@ -58,8 +58,8 @@ set noshowmode
 
 set nojoinspaces
 
-" set spelllang=en_us,es
-" set spell
+set spelllang=en_us
+set spell
 
 set virtualedit=block
 
